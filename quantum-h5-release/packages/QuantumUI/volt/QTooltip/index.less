@@ -44,6 +44,12 @@
     width: 0;
     height: 0;
     border: @arrow-size solid transparent;
+    display: none; // 默认隐藏箭头
+  }
+
+  // 显示箭头的类名
+  &.show-arrow .q-tooltip-arrow {
+    display: block;
   }
 
   // Top 位置
@@ -125,11 +131,16 @@
   // 箭头基础样式
   [data-pc-section="arrow"] {
     position: absolute;
-    display: block;
+    display: none; // 默认隐藏箭头
     width: 0;
     height: 0;
     border-color: transparent;
     border-style: solid;
+  }
+
+  // 显示箭头的类名
+  &.show-arrow [data-pc-section="arrow"] {
+    display: block;
   }
 
   // Right 位置箭头

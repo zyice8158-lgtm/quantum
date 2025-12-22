@@ -152,7 +152,7 @@ const positionCode = `<!-- Top -->
 <Button v-tooltip.top="{
   value: 'Tooltip on top',
   pt: {
-    root: { class: 'custom-arrow-tooltip' },
+    root: { class: 'custom-arrow-tooltip' },  //加入 show-arrow 弹窗有箭头
     arrow: { class: 'arrow-center' }
   }
 }">top</Button>
