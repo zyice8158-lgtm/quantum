@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import './base.css';
+@source "../../../../packages/**/*.{vue,js,ts,jsx,tsx}";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}

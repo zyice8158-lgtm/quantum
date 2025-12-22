@@ -1,0 +1,64 @@
+.audio-wave {
+  display: flex;
+  align-items: center;
+  background: var(--color-surface-container);
+  border: 1px solid transparent;
+  // background: linear-gradient(var(--color-on-primary), var(--color-on-primary)) padding-box,
+  // linear-gradient(90deg,var(--color-primary), var(--color-ai-step-5)) border-box;
+  border-radius: 32px;
+  padding: 4px 8px;
+  width: 95%; /* 父容器宽度随屏幕缩放 */
+  
+  .aw-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px; /* 默认间距 */
+    height: 30px;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .aw-bar {
+    // 动态计算宽度：(容器宽 - 总间距) / 条数量
+    width: calc((100% - 38px) / 20); 
+    min-width: 1px; /* 最小宽度兜底，避免消失 */
+    max-width: 8px; /* 最大宽度限制，避免超宽屏幕变粗 */
+    // background: var(--color-primary-primary);
+    background: var(--color-overlay-outline);
+    border-radius: 18px;
+    transition: height 400ms linear;
+  }
+
+  // 小屏幕适配：减少间距，保证条宽清晰
+  @media screen and (max-width: 320px) {
+    .aw-center {
+      gap: 1px; // 间距减半
+    }
+    .aw-bar {
+      width: calc((100% - 19px) / 20); // 重新计算总间距（19*1=19px）
+    }
+  }
+
+  // 其他样式保持不变
+  .audio-wave-down {
+    margin-left: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform: rotate(0deg);
+  }
+
+  .audio-wave-down.rotated {
+    transform: rotate(180deg);
+  }
+
+  .aw-right-record,
+  .aw-right-stop {
+    cursor: pointer;
+    display: flex;
+  }
+
+  .aw-icon-go-on {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,2 @@
+@import "@libs/theme";
+@source "../../../../packages/**/*.{vue,js,ts,jsx,tsx}";

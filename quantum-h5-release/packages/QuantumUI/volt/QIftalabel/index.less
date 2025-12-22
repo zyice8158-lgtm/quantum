@@ -1,0 +1,185 @@
+.p-iftalabel1 {
+  display: block;
+  position: relative;
+}
+
+.p-iftalabel1 label {
+  position: absolute;
+  pointer-events: none;
+  top: var(--p-iftalabel-top, 0.5rem) !important;
+  transition-property: all;
+  transition-timing-function: ease;
+  line-height: 1;
+  font-size: var(--p-iftalabel-font-size, 0.75rem) !important;
+  font-weight: var(--p-iftalabel-font-weight, 400) !important;
+  inset-inline-start: var(--p-iftalabel-position-x, 0.75rem) !important;
+  color: var(--color-primary-primary, #64748b) !important;
+  transition-duration: var(--p-iftalabel-transition-duration, 0.2s) !important;
+}
+
+.p-iftalabel1 .p-inputtext,
+.p-iftalabel1 .p-textarea,
+.p-iftalabel1 .p-select-label,
+.p-iftalabel1 .p-multiselect-label,
+.p-iftalabel1 .p-multiselect-label:has(.p-chip),
+.p-iftalabel1 .p-autocomplete-input-multiple,
+.p-iftalabel1 .p-cascadeselect-label,
+.p-iftalabel1 .p-treeselect-label {
+  padding-block-start: var(--p-iftalabel-input-padding-top, 1.5rem) !important;
+  padding-block-end: var(--p-iftalabel-input-padding-bottom, 0.5rem) !important;
+}
+
+.p-iftalabel1:has(.p-invalid) label {
+  color: var(--p-iftalabel-invalid-color, #dc2626) !important;
+}
+
+.p-iftalabel1:has(input:focus) label,
+.p-iftalabel1:has(input:-webkit-autofill) label,
+.p-iftalabel1:has(textarea:focus) label,
+.p-iftalabel1:has(.p-inputwrapper-focus) label {
+  color: var(--p-iftalabel-focus-color, #475569) !important;
+}
+
+.p-iftalabel1 .p-inputicon {
+  top: var(--p-iftalabel-input-padding-top, 1.5rem) !important;
+  transform: translateY(25%) !important;
+  margin-top: 0 !important;
+}
+
+
+.p-floatlabel1 {
+  display: block;
+  position: relative;
+}
+
+.p-floatlabel1:has(input:focus) label,
+.p-floatlabel1:has(input.p-filled) label,
+.p-floatlabel1:has(input:-webkit-autofill) label,
+.p-floatlabel1:has(textarea:focus) label,
+.p-floatlabel1:has(textarea.p-filled) label,
+.p-floatlabel1:has(.p-inputwrapper-focus) label,
+.p-floatlabel1:has(.p-inputwrapper-filled) label,
+.p-floatlabel1:has(input[placeholder]) label,
+.p-floatlabel1:has(textarea[placeholder]) label {
+  top: var(--p-floatlabel-over-active-top, -1.25rem) !important;
+  transform: translateY(0) !important;
+  font-size: var(--p-floatlabel-active-font-size, 0.75rem) !important;
+  font-weight: var(--p-floatlabel-active-font-weight, 400) !important;
+  color: red !important;
+}
+
+
+
+.p-floatlabel1 label {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%) !important;
+  transition-property: all;
+  transition-timing-function: ease;
+  line-height: 1;
+  font-weight: var(--p-floatlabel-font-weight, 500) !important;
+  inset-inline-start: var(--p-floatlabel-position-x, 0.75rem) !important;
+  color: var(--p-floatlabel-color, #64748b) !important;
+  transition-duration: var(--p-floatlabel-transition-duration, 0.2s) !important;
+}
+
+.p-floatlabel1:has(.p-textarea) label {
+  top: var(--p-floatlabel-position-y, 0.5rem) !important;
+  transform: translateY(0) !important;
+}
+
+.p-floatlabel1:has(.p-inputicon:first-child) label {
+  inset-inline-start: calc((var(--p-form-field-padding-x, 0.75rem) * 2) + var(--p-icon-size, 1rem)) !important;
+}
+
+.p-floatlabel1:has(input:focus) label,
+.p-floatlabel1:has(input.p-filled) label,
+.p-floatlabel1:has(input:-webkit-autofill) label,
+.p-floatlabel1:has(textarea:focus) label,
+.p-floatlabel1:has(textarea.p-filled) label,
+.p-floatlabel1:has(.p-inputwrapper-focus) label,
+.p-floatlabel1:has(.p-inputwrapper-filled) label,
+.p-floatlabel1:has(input[placeholder]) label,
+.p-floatlabel1:has(textarea[placeholder]) label {
+  top: var(--p-floatlabel-over-active-top, -1.25rem) !important;
+  transform: translateY(0) !important;
+  font-size: var(--p-floatlabel-active-font-size, 0.75rem) !important;
+  font-weight: var(--p-floatlabel-active-font-weight, 400) !important;
+}
+
+.p-floatlabel1:has(input.p-filled) label,
+.p-floatlabel1:has(textarea.p-filled) label,
+.p-floatlabel1:has(.p-inputwrapper-filled) label {
+  color: var(--p-floatlabel-active-color, #64748b) !important;
+}
+
+.p-floatlabel1:has(input:focus) label,
+.p-floatlabel1:has(input:-webkit-autofill) label,
+.p-floatlabel1:has(textarea:focus) label,
+.p-floatlabel1:has(.p-inputwrapper-focus) label {
+  color: var(--p-floatlabel-focus-color, #475569) !important;
+}
+
+.p-floatlabel1-in .p-inputtext,
+.p-floatlabel1-in .p-textarea,
+.p-floatlabel1-in .p-select-label,
+.p-floatlabel1-in .p-multiselect-label,
+.p-floatlabel1-in .p-multiselect-label:has(.p-chip),
+.p-floatlabel1-in .p-autocomplete-input-multiple,
+.p-floatlabel1-in .p-cascadeselect-label,
+.p-floatlabel1-in .p-treeselect-label {
+  padding-block-start: var(--p-floatlabel-in-input-padding-top, 1.5rem) !important;
+  padding-block-end: var(--p-floatlabel-in-input-padding-bottom, 0.5rem) !important;
+}
+
+.p-floatlabel1-in:has(input:focus) label,
+.p-floatlabel1-in:has(input.p-filled) label,
+.p-floatlabel1-in:has(input:-webkit-autofill) label,
+.p-floatlabel1-in:has(textarea:focus) label,
+.p-floatlabel1-in:has(textarea.p-filled) label,
+.p-floatlabel1-in:has(.p-inputwrapper-focus) label,
+.p-floatlabel1-in:has(.p-inputwrapper-filled) label,
+.p-floatlabel1-in:has(input[placeholder]) label,
+.p-floatlabel1-in:has(textarea[placeholder]) label {
+  top: var(--p-floatlabel-in-active-top, 0.5rem) !important;
+}
+
+.p-floatlabel1-on:has(input:focus) label,
+.p-floatlabel1-on:has(input.p-filled) label,
+.p-floatlabel1-on:has(input:-webkit-autofill) label,
+.p-floatlabel1-on:has(textarea:focus) label,
+.p-floatlabel1-on:has(textarea.p-filled) label,
+.p-floatlabel1-on:has(.p-inputwrapper-focus) label,
+.p-floatlabel1-on:has(.p-inputwrapper-filled) label,
+.p-floatlabel1-on:has(input[placeholder]) label,
+.p-floatlabel1-on:has(textarea[placeholder]) label {
+  top: 0 !important;
+  transform: translateY(-50%) !important;
+  border-radius: var(--p-floatlabel-on-border-radius, 2px) !important;
+  background: var(--p-floatlabel-on-active-background, #ffffff) !important;
+  padding: var(--p-floatlabel-on-active-padding, 0 0.125rem) !important;
+}
+
+.p-floatlabel1:has([class^='p-'][class$='-fluid']) {
+  width: 100%;
+}
+
+.p-floatlabel1:has(.p-invalid) label {
+  color: var(--p-floatlabel-invalid-color, #dc2626) !important;
+}
+
+.p-floatlabel1:has(input:focus) label,
+.p-floatlabel1:has(input.p-filled) label,
+.p-floatlabel1:has(input:-webkit-autofill) label,
+.p-floatlabel1:has(textarea:focus) label,
+.p-floatlabel1:has(textarea.p-filled) label,
+.p-floatlabel1:has(.p-inputwrapper-focus) label,
+.p-floatlabel1:has(.p-inputwrapper-filled) label,
+.p-floatlabel1:has(input[placeholder]) label,
+.p-floatlabel1:has(textarea[placeholder]) label {
+  top: var(--p-floatlabel-over-active-top, -1.25rem) !important;
+  transform: translateY(0) !important;
+  font-size: var(--p-floatlabel-active-font-size, 0.75rem) !important;
+  font-weight: var(--p-floatlabel-active-font-weight, 400) !important;
+}

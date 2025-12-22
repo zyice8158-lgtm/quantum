@@ -1,0 +1,29 @@
+.audio-wave {
+  display: flex;
+  align-items: center;
+
+  .aw-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    height: 30px;
+  }
+
+  .aw-bar {
+    width: 2px;
+    background: var(--color-text-on-surface-muted);
+    border-radius: 18px;
+    transition: height 400ms linear;
+  }
+
+  .audio-wave-down {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform: rotate(90deg); // 初始 90°
+  }
+
+  .audio-wave-down.rotated {
+    transform: rotate(270deg); // 旋转 180°（反向）
+  }
+}

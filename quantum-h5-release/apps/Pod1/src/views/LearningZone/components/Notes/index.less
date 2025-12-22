@@ -1,0 +1,696 @@
+@import './style.less';
+#editorBox {
+  width: 97%;
+  position: relative;
+  height: 100%;
+  background: var(--color-surface-blur);
+  border-radius: 24px;
+  padding: 10px 0px;
+  overflow: hidden;
+
+  :deep(h1) {
+    font-size: 32px;
+  }
+
+  :deep(h2) {
+    font-size: 24px;
+  }
+
+  :deep(h3) {
+    font-size: 19px;
+  }
+
+  :deep(h4) {
+    font-size: 16px;
+  }
+
+  :deep(h5) {
+    font-size: 14px;
+  }
+
+  :deep(em) {
+    font-style: italic;
+  }
+
+  :deep(blockquote) {
+    border-left: 0 !important;
+  }
+
+  :deep(pre) {
+    max-width: 100%;
+    white-space: normal;
+
+    code {
+      max-width: 100%;
+      word-break: break-all;
+      white-space: pre-wrap;
+    }
+  }
+}
+
+.notesTitle{
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  margin: 10px 0 10px 25px;
+}
+
+.editorFileContent{
+  margin: 0 22px 0 19px;
+  display: flex;
+  flex-wrap: wrap; // 允许换行
+  gap: 8px; // 项之间的间距
+  align-items: flex-start; // 顶部对齐
+}
+
+.file-item{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-focus-pressed);
+  margin-bottom: 10px;
+  border-radius: 25px;
+  height: 30px;
+  padding: 0 12px;
+  flex: 0 0 auto; // 不伸缩，保持内容宽度
+  min-width: 0; // 允许内容收缩
+  max-width: 100%; // 防止溢出
+  
+  // 可选：设置最大宽度，超出显示省略号
+  max-width: 200px;
+}
+
+.file-info {
+  flex: 1;
+  min-width: 0; // 重要：允许文本截断
+}
+
+.file-title{
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap; // 不换行
+  overflow: hidden; // 隐藏溢出
+  text-overflow: ellipsis; // 显示省略号
+}
+
+
+.placeholder-bottom{
+  margin: 0 22px 0 19px;
+}
+
+.has_beautify .editorBox {
+  padding-bottom: 0;
+}
+
+.editorBox {
+  width: 100%;
+  // height: 100%;
+  max-height: calc(100% - 200px);
+  padding: 0 20px 0px;
+  display: flex;
+  flex-direction: column;
+  
+  :deep(.w-e-text-container [data-slate-editor]) {
+    min-height: 60%;
+    padding: 5px 3px;
+  }
+
+  :deep(div[data-w-e-toolbar]) {
+    position: relative;
+    z-index: 5;
+    flex-shrink: 0;
+    min-height: 42px;
+  }
+  
+  div[data-w-e-textarea] {
+    position: relative;
+    height: auto !important;
+    flex: 1;
+    // overflow: hidden;
+    overflow: scroll;
+    padding-bottom: 25px;
+  }
+
+  :deep(.w-e-text-placeholder) {
+    left: 0;
+    color: var(--color-on-focus-container);
+  }
+
+  :deep(.w-e-text-container) {
+    background-color: transparent;
+    .w-e-scroll {
+      height: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
+  :deep(.w-e-bar-divider) {
+    height: 20px;
+    margin: 10px 3px 10px 0px;
+    background: var(--color-surface-disabled);
+  }
+
+  :deep(.w-e-drop-panel) {
+    min-width: 250px;
+  }
+
+  :deep(.w-e-bar-item-group) {
+    margin-right: 12px;
+
+    &:has(button[data-menu-key='group-more-export'].disabled) {
+      pointer-events: none;
+    }
+  }
+
+  :deep(.w-e-hover-bar) {
+    padding: 6px 8px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px 0px var(--themeEditorModalShadow);
+    border: 1px solid var(--themeEditorModalBorder);
+
+    .w-e-bar-item {
+      height: 28px;
+      margin: 0 6px;
+      padding: 0;
+
+      button {
+        height: 28px;
+        border-radius: 4px;
+        padding: 0 10px;
+        color: var(--themeEditorModalTitleColor);
+        border: 1px solid transparent;
+
+        &:hover {
+          background: var(--themeEditorModalHoverBack);
+          border: 1px solid var(--themeEditorModalHoverBorder);
+        }
+      }
+    }
+  }
+
+  :deep(button[data-menu-key='fontSize']) {
+    max-width: 60px !important;
+    padding: 0 10px 0 5px;
+    background: var(--themeEditorToolbarBtnBack);
+    border-radius: 9px;
+    height: 25px;
+    border: 1px solid var(--themeEditorToolbarBtnBorderBack);
+    color: var(--themeEditorToolbarBtnColor);
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+
+    &::before {
+      font-size: 11px;
+    }
+
+    &::after {
+      left: 50%;
+    }
+
+    svg {
+      height: 12px;
+      width: 12px;
+    }
+  }
+
+  :deep(button[data-menu-key='fontFamily']) {
+    width: 65px !important;
+    padding: 0 10px;
+    background: var(--themeEditorToolbarBtnBack);
+    border-radius: 9px;
+    height: 25px;
+    border: 1px solid var(--themeEditorToolbarBtnBorderBack);
+    color: var(--themeEditorToolbarBtnColor);
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+
+    &::before {
+      font-size: 11px;
+    }
+
+    &::after {
+      left: 50%;
+    }
+
+    svg {
+      fill: var(--color-focus-focus);
+      height: 12px;
+      width: 12px;
+    }
+  }
+
+  :deep(button[data-menu-key='headerSelect']) {
+    width: auto !important;
+    background: var(--themeEditorToolbarBtnBack);
+    border-radius: 9px;
+    height: 25px;
+    padding: 0 8px;
+    border: 1px solid var(--themeEditorToolbarBtnBorderBack);
+    color: var(--themeEditorToolbarBtnColor);
+    font-size: 10px;
+
+    &::before {
+      font-size: 11px;
+    }
+    
+    svg {
+      fill: var(--color-focus-focus);
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  :deep(.w-e-toolbar) {
+    background:var(--color-on-primary);
+    border-radius: 25px;
+    color: var(--color-focus-focus);
+    z-index: 1;
+    padding: 4px 25px;
+    
+    .w-e-bar-item {
+      padding: 0;
+      margin: 0 3px 0 0;
+
+      &:nth-child(-n + 5) {
+        z-index: 2;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      button {
+        height: 25px;
+        border-radius: 12px;
+        transition: all 0.2s;
+
+        .activeBackForBtn {
+          width: 100%;
+          height: 24px;
+          position: absolute;
+          left: 0px;
+          top: 9px;
+          display: none;
+          // background: rgba(0, 0, 0, 0.12);
+          border-radius: inherit;
+          z-index: 5;
+          pointer-events: none;
+        }
+      }
+
+      button.active {
+        .activeBackForBtn {
+          display: block;
+        }
+      }
+    }
+
+    & > .w-e-bar-item {
+      border: 1px solid var(--color-surface-disabled);
+      height: 25px;
+      border-radius: 11px;
+      margin-top: 7px;
+      
+      button:hover {
+        transform: scale(1);
+      }
+    }
+  }
+
+  :deep(button[data-menu-key='group-more-justify']) {
+    width: 25px !important;
+    background-image: url('@/assets/img/textEditor/textEditorMoreIconDark.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 11px 11px !important;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  :deep(button[data-menu-key='color']) {
+    width: 36px !important;
+
+    svg {
+      fill:  var(--color-focus-focus);
+    }
+  }
+
+  :deep(button[data-menu-key='lineHeight']) {
+    font-size: 0;
+    width: 36px !important;
+    background-image: url('@/assets/img/textEditor/textEditorLineHeightIconDark.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 16px 16px !important;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: none;
+    }
+
+    &::before {
+      font-size: 11px;
+    }
+  }
+
+  :deep(button[data-menu-key='undo']) {
+    width: 25px !important;
+    background-image: url('@/assets/img/textEditor/textEditorUndoIconDark.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 10px 9px !important;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  :deep(button[data-menu-key='redo']) {
+    width: 25px !important;
+    background-image: url('@/assets/img/textEditor/textEditorRedoIcon.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 10px 9px !important;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  :deep(button[data-menu-key='bold']) {
+    width: 25px !important;
+    background-image: url('@/assets/img/textEditor/textEditorBoldIconDark.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 10px 9px !important;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  :deep(button[data-menu-key='italic']) {
+    width: 25px !important;
+    background-image: url('@/assets/img/textEditor/textEditorItalicIconDark.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 10px 9px !important;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  :deep(button[data-menu-key='insertTable']) {
+    width: auto !important;
+    background: var(--themeEditorToolbarBtnBack);
+    border-radius: 9px;
+    height: 25px;
+    padding: 0 8px;
+    border: 1px solid var(--themeEditorToolbarBtnBorderBack);
+    color: var(--themeEditorToolbarBtnColor);
+    font-size: 10px;
+
+    svg:nth-child(1) {
+      fill: currentColor;
+    }
+
+    &::before {
+      font-size: 11px;
+    }
+  }
+
+  :deep(button[data-menu-key='through']) {
+    width: 25px !important;
+    background-image: url('@/assets/img/textEditor/textEditorThroughlineIconDark.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 12px 11px !important;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  :deep(button[data-menu-key='clearStyle']) {
+    width: 25px !important;
+    background-image: url('@/assets/img/textEditor/textEditorClearStyleIconDark.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 15px 15px !important;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  :deep(button[data-menu-key='bgColor']) {
+    width: 36px !important;
+    background-image: url('@/assets/img/textEditor/textEditorBackgroundIconDark.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 17px 17px !important;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  :deep(button[data-menu-key='bulletedList']) {
+    width: 25px !important;
+    background-image: url('@/assets/img/textEditor/textEditorULIconDark.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 12px 12px !important;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  :deep(button[data-menu-key='numberedList']) {
+    width: 25px !important;
+    background-image: url('@/assets/img/textEditor/textEditorOLIconDark.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 10px 9px !important;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  :deep(button[data-menu-key='lineHeight'] + .w-e-select-list) {
+    ul li:first-child {
+      display: none;
+    }
+  }
+
+  :deep(.w-e-select-list) {
+    border-radius: 12px;
+    font-size: 11px;
+  }
+  
+  :deep(.w-e-bar-item-group .w-e-bar-item-menus-container) {
+    left: -74px;
+    border-radius: 12px;
+    padding: 10px;
+
+    .w-e-bar-item {
+      margin: 0;
+      height: 38px;
+
+      button {
+        justify-content: flex-start;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 6px;
+        padding: 4px 10px;
+        border: 1px solid transparent;
+        color: var(--themeEditorModalTitleColor);
+        white-space: nowrap;
+        font-size: 12px;
+        margin-bottom: 4px;
+        height: 38px;
+
+        &:hover {
+          border: 1px solid var(--themeEditorContextBorderColor);
+          background: var(--themeEditorBtnHoverBack);
+          transform: scale(1);
+        }
+
+        svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+
+  :deep(button[data-menu-key='group-more-export']) {
+    width: 36px !important;
+    background-image: url('@/assets/img/textEditor/exportGroupIconDark.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain;
+    // background: var(--themeEditorExportGroupBtnBack);
+
+    &.disabled {
+      opacity: .3;
+    }
+
+    &:hover {
+      // background: var(--themeEditorExportGroupBtnBack);
+      background-image: url('@/assets/img/textEditor/exportGroupIconDark.svg') !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      background-size: contain;
+    }
+
+    & > svg {
+      // display: none;
+      position: relative;
+      left: 10px;
+      fill: var(--color-focus-focus);
+      width: 11px;
+      height: 11px;
+    }
+  }
+
+  :deep(.w-e-bar-item-group button[data-menu-key='group-more-export'] + .w-e-bar-item-menus-container) {
+    padding: 10px;
+
+    .w-e-bar-item {
+      height: 38px;
+    }
+
+    button[data-menu-key='exportWord'] {
+      justify-content: flex-start;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 6px;
+      padding: 4px 10px;
+      border: 1px solid transparent;
+      color: var(--themeEditorModalTitleColor);
+      white-space: nowrap;
+      font-size: 12px;
+      margin-bottom: 4px;
+      height: 38px;
+
+      &:hover {
+        border: 1px solid var(--themeEditorContextBorderColor);
+        background: var(--themeEditorBtnHoverBack);
+        transform: scale(1);
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
+        background: #3872FC;
+        border-radius: 6px;
+        fill: var(--color-on-primary);
+      }
+    }
+
+    button[data-menu-key='exportPDF'] {
+      justify-content: flex-start;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 6px;
+      padding: 4px 10px;
+      border: 1px solid transparent;
+      color: var(--themeEditorModalTitleColor);
+      white-space: nowrap;
+      font-size: 12px;
+      height: 38px;
+
+      &:hover {
+        border: 1px solid var(--themeEditorContextBorderColor);
+        background: var(--themeEditorBtnHoverBack);
+        transform: scale(1);
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
+        background: #FD5454;
+        border-radius: 6px;
+        fill: var(--color-on-primary);
+      }
+    }
+  }
+}
+
+:deep(.editorModalClass) {
+  background: var(--themeEditorModalBack);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0;
+  z-index: 110;
+
+  &.hideIt {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.showIt {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .btn-close {
+    display: none;
+  }
+}

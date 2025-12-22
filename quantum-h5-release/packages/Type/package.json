@@ -1,0 +1,10 @@
+{
+  "name": "public-type",
+  "version": "1.0.0",
+  "description": "public type for quantum-h5 project.",
+  "main": "index.ts",
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

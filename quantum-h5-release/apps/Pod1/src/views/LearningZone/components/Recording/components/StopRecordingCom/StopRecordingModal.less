@@ -1,0 +1,46 @@
+.stop-recording-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+  
+    .modal-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--color-overlay-inverse-overlay);
+    }
+  
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--color-on-primary);
+      border-radius: 25px;
+      width: 400px;
+      padding: 20px;
+  
+      .modal-title {
+        margin: 0 0 16px 0;
+        font-size: 18px;
+        color: var(--color-on-focus-container);
+      }
+  
+      .modal-message {
+        margin: 0 0 24px 0;
+        font-size: 14px;
+        color: var(--color-text-on-surface-variant);
+      }
+  
+      .modal-buttons {
+        display: flex;
+        justify-content: right;
+        gap: 16px;
+      }
+    }
+  }

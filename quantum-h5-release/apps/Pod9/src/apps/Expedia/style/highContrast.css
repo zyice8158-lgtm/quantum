@@ -1,0 +1,8 @@
+@media screen and (forced-colors: active) {
+  .high-contrast
+  {
+    /* forced-color-adjust: none;
+    background-color: Highlight;
+    color: HighlightText; */
+  }
+}

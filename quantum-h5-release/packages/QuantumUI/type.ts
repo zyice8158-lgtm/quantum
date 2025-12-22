@@ -1,0 +1,41 @@
+export interface ThemeData {
+    "--hover-color": string
+    "--btn-border-color": string
+    "--select-color": string,
+    "--chat-bg": string,
+    "--chat-pkb-bg": string,
+    "--br-color": string,
+    "--color-error": string,
+    "--color-error-bg": string,
+    "--font-family": string,
+    // "--br-color": " #eaeaea",
+    "--primary-color": string,
+    "--primary-color-bg": string,
+    "--primary-hover-color": string,
+    "--text-color1": string,
+    "--text-color2": string,
+    "--text-color3": string,
+    "--text-color4": string,
+    "--text-color5": string,
+    "--bg-color1": string,
+    "--bg-color2": string,
+    "--bg-menu": string,
+    "--wireframe-color1": string,
+    "--btn-focus-outline-color": string,
+    "--lz-card-bg": string,
+    "--lz-podcast-bg": string,
+    "--lz-notes-bg": string,
+    "--lz-quiz-bg": string,
+    "--lz-primary-font": string,
+    "--lz-card-item-bg": string,
+    "--lz-card-item-text": string,
+    "--lz-icon-video": string,
+    "--lz-icon-notes-bg": string,
+    "--lz-icon-podcast-bg": string,
+    "--lz-icon-quiz-bg": string,
+}
+export enum THEME {
+    COMMON,
+    DARK,
+
+}

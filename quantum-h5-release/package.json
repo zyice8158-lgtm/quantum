@@ -1,0 +1,61 @@
+{
+  "name": "quantum",
+  "displayName": "Quantum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm build:pkgs && pnpm -r --parallel --filter @ainow/desktop dev",
+    "dev:pod-index": "pnpm -r --parallel --filter quantum-pod-index dev",
+    "dev:pod1": "pnpm -r --filter quantum-pod-1 dev",
+    "preview:pod1": "pnpm -r --filter quantum-pod-1 preview",
+    "build:pod1": "pnpm -r --filter quantum-pod-1 build",
+    "dev:halo": "pnpm -r --filter @quantum/halo dev",
+    "preview:halo": "pnpm -r --filter @quantum/halo preview",
+    "build:halo": "pnpm -r --filter @quantum/halo build",
+    "dev:loading": "pnpm -r --filter @quantum/loading dev",
+    "preview:loading": "pnpm -r --filter @quantum/loading preview",
+    "build:loading": "pnpm -r --filter @quantum/loading build",
+    "dev:ui": "pnpm -r --filter @quantum/devui dev",
+    "build:ui": "pnpm -r --filter @quantum/devui build",
+    "dev:icon": "pnpm -r --filter @quantum/icons dev",
+    "dev:web": "pnpm build:pkgs && concurrently \"pnpm --filter @ainow/backend dev\" \"pnpm --filter @ainow/desktop dev:web\"",
+    "dev:edge": "pnpm --filter @ainow/edge dev",
+    "typescript:desktop": "pnpm -r --filter=@ainow/desktop run typecheck",
+    "typescript": "pnpm -r run typecheck",
+    "build": "sh build.sh",
+    "build:edge": "pnpm --filter @ainow/edge build:unpack",
+    "build:win": "pnpm build:pkgs && pnpm --filter @ainow/desktop build:win",
+    "build:web": "pnpm build:pkgs && pnpm --filter @ainow/backend build",
+    "preview:web": "pnpm build:web && cd apps/backend/dist && npm i && node index.js",
+    "build:searchbar": "pnpm build:pkgs && pnpm --filter @ainow/searchbar build:win",
+    "volt": "volt-vue add --outdir ./packages/QuantumUI",
+    "test": "pnpm -r test",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ],
+  "lint-staged": {
+    "**/src/**/*.{ts,vue}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6"
+  }
+}

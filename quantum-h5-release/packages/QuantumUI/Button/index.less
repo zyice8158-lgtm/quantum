@@ -1,0 +1,39 @@
+.q-button {
+    min-height: var(--p-button-height);
+    min-width: var(--p-button-height);
+    line-height: var(--p-button-height);
+    padding: 0 10.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    &_content {
+        // 居中
+        display: flex;
+        justify-content: space-around;
+    }
+    &-border {
+        border: 1px solid var(--btn-border-color);
+    }
+    &_text {
+        height: 100%;
+        line-height: 100%;
+    }
+    &-default {
+        background-color: var(--p-default-color);
+    }
+    &-primary {
+        background-color: var(--p-primary-color);
+        color: #fff;
+    }
+    &-loading {
+        background: var(--p-loading-color);
+        color: #fff;
+    }
+    &-round {
+        border-radius: calc(var(--p-button-height) / 2);
+    }
+    &-disabled {
+        cursor: not-allowed;
+        opacity: var(--p-disabled-opacity);
+    }
+}

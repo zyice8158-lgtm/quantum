@@ -1,0 +1,80 @@
+/* Page Container */
+.page-container {
+    padding: 2rem;
+    min-height: 100vh;
+    font-family: sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: var(--color-surface-container);
+    color: var(--color-text-on-surface);
+    position: relative;
+}
+
+/* Section Styles */
+.section-title { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: var(--color-text-on-surface); }
+.section-desc { font-size: 0.875rem; color: var(--color-text-on-surface-variant); margin-bottom: 1rem; }
+
+/* Card & Demo Container */
+.card { width: 100%; max-width: 800px; margin-bottom: 1rem; }
+.demo-container { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.5rem; border: 1px dashed var(--color-outlines-outline); border-radius: var(--radius-8); background-color: var(--color-surface); margin-bottom: 1rem; }
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--color-outlines-outline);
+    background-color: var(--color-surface);
+    color: var(--color-text-on-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px var(--effects-elevation-drop-shadow-light);
+    z-index: 1000;
+    &:hover { background-color: var(--color-surface-container); transform: scale(1.1); box-shadow: 0 6px 16px var(--effects-elevation-drop-shadow-heavy); }
+    .pi { font-size: 1.25rem; }
+    .pi-sun { color: #F5A623; }
+    .pi-moon { color: var(--color-primary); }
+}
+
+/* Icons */
+.pi { font-size: 1rem; }
+
+/* Action Buttons */
+.action-btn { padding: 0.5rem 1.25rem; border-radius: var(--radius-max); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; border: none; cursor: pointer; white-space: nowrap; }
+.action-btn-purple { background-color: var(--color-primary-primary); color: var(--color-on-primary); &:hover { opacity: 0.9; } }
+.action-btn-purple-outline { background-color: transparent; color: var(--color-primary); border: 1px solid var(--color-primary); &:hover { background-color: var(--color-primary-hover); } }
+.action-btn-dark { background-color: var(--color-inverse-surface); color: var(--color-text-inverse-on-surface); &:hover { opacity: 0.9; } }
+
+/* 亮色主题 Action 按钮样式 */
+.action-btn-contrast { background-color: #D0BCFF; color: #1E1E1E; &:hover { opacity: 0.9; } }
+.action-btn-secondary { background-color: #6C43C6; color: #fff; &:hover { opacity: 0.9; } }
+.action-btn-info { background-color: #0E131E; color: #fff; &:hover { opacity: 0.9; } }
+.action-btn-success { background-color: #0E131E; color: #fff; &:hover { opacity: 0.9; } }
+.action-btn-warn { background-color: #0E131E; color: #fff; &:hover { opacity: 0.9; } }
+.action-btn-error { background-color: #0E131E; color: #fff; &:hover { opacity: 0.9; } }
+
+/* Graphic Banner */
+.graphic-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.graphic-content { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.graphic-title { font-weight: 600; font-size: 0.9375rem; color: var(--color-text-on-surface); }
+.graphic-text { font-size: 0.8125rem; color: var(--color-text-on-surface-variant); opacity: 0.8; }
+.graphic-progress { height: 4px; background-color: var(--color-outlines-outline-variant); border-radius: var(--radius-max); overflow: hidden; margin-top: 8px; width: 100%; max-width: 300px; }
+.graphic-progress-bar { height: 100%; background: linear-gradient(90deg, var(--color-primary), #4ECDC4); border-radius: var(--radius-max); transition: width 0.3s ease; }
+
+/* Dark Theme */
+:root.theme-dark {
+    .action-btn-dark { background-color: var(--color-focus); color: var(--color-on-focus); &:hover { opacity: 0.9; } }
+
+    /* 暗色主题 Action 按钮样式 */
+    .action-btn-contrast { background-color: #855EE1; color: #fff; &:hover { opacity: 0.9; } }
+    .action-btn-secondary { background-color: #D0BCFF; color: #1E1E1E; &:hover { opacity: 0.9; } }
+    .action-btn-info { background-color: #F1EEEB; color: #1E1E1E; &:hover { opacity: 0.9; } }
+    .action-btn-success { background-color: #F1EEEB; color: #1E1E1E; &:hover { opacity: 0.9; } }
+    .action-btn-warn { background-color: #F1EEEB; color: #1E1E1E; &:hover { opacity: 0.9; } }
+    .action-btn-error { background-color: #F1EEEB; color: #1E1E1E; &:hover { opacity: 0.9; } }
+}

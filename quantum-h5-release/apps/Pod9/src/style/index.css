@@ -1,0 +1,41 @@
+@import './base.css';
+
+@font-face {
+  font-family: 'Rookery New';
+  src: url(@/assets/fonts/RookeryNew-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Rookery Medium';
+  src: url(@/assets/fonts/RookeryNew-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Rookery Bold';
+  src: url(@/assets/fonts/RookeryNew-Bold.ttf);
+}
+@font-face {
+  font-family: 'SF Pro';
+  src: url(@/assets/fonts/SF-Pro.ttf);
+}
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url(@/assets/fonts/SF-Pro-Text-Regular.otf);
+}
+
+:root {
+  font-style: normal;
+  font-family: 'Rookery New';
+
+  body {
+    font-size: 14px;
+  }
+}
+
+.ellipse {
+  @apply whitespace-nowrap overflow-hidden text-ellipsis;
+}
+
+.no-ligature {
+  font-feature-settings: 'liga' off, 'clig' off;
+}

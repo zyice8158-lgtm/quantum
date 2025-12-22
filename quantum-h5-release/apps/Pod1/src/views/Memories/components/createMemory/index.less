@@ -1,0 +1,31 @@
+.submitLoading{
+    transform-origin: 50% 50%;
+    animation: submitLoadingRuning 1s infinite linear;
+}
+
+@keyframes submitLoadingRuning {
+    0%{
+        transform: rotateZ(0deg)
+    }
+    100%{
+        transform: rotateZ(360deg)
+    }
+}
+.imgItem{
+    transition: all .3s ease;
+    max-width: 96px;
+    max-height: 96px;
+    &.largeImg{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 80vw;
+        max-height: 80vh;
+        width: fit-content;
+        height: fit-content;
+        z-index: 999;
+    }
+}

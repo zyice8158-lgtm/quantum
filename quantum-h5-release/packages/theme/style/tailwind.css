@@ -1,0 +1,92 @@
+
+@import "tailwindcss";
+@import "tailwindcss-primeui";
+
+@import "./var/text.css";
+@import "./var/colors.css";
+@import "./var/darkColors.css";
+@import "./var/highContrast.css";
+/* @import "./var/space.css"; */
+@import "./var/radius.css";
+
+@theme static {
+    --spacing:1px ;
+
+  --color-primary-ai: red;
+  /* --color-primary-ai-i: #var(--p-surface-0);; */
+  --color-background: #fafafa;
+  --color-btn-bg: var(--p-surface-0);
+
+  --color-btn-active:  var(--p-surface-200);
+  --color-btn-hover:  var(--p-surface-100);
+  /* --color-btn-color-ai: var(--ai-color); */
+  /* --color-btn-color-ai-hover:var(--p-surface-0); */
+  --color-ai: var(--ai-color);
+  --color-text: var(--p-surface-500);
+  --color-text-sub: var(--p-surface-500);
+  --color-text-w: var(--p-surface-0);
+  /* --color-border: var(--p-surface-0); */
+  --color-border0: var(--p-border-color-0);
+  --border-radius-max:10000px;
+    /* delete later */
+
+
+}
+
+.bg-ai-gradient {
+  background-image: var(--ai-color-gradient) !important;
+}
+
+
+/* @layer theme {
+  :root.theme-dark {
+    --color-background: #333;
+    --color-text: #fafafa;
+  }
+} */
+
+:root {
+--scale:1;
+
+  /* TODO delete later */
+  /*  ;
+  --text-display-xl: calc(var(--text-display-xl) * var(--scale,1)); */
+  --ai-color-gradient:linear-gradient(90deg, #DC67C3 0%, var(--ai-color) 100%);
+  /* Primary and Surface Palettes */
+  --ai-color:#855EE1;
+  --ai-color-hover:#855EE11F;
+    --p-primary-50: #fdf5fc;
+    --p-primary-100: #fad1f0;
+    --p-primary-200: #f3a7e4;
+    --p-primary-300: #e77ed8;
+    --p-primary-400: #d354cc;
+    --p-primary-500: #DC67C3;
+    --p-primary-600: #c23a9c;
+    --p-primary-700: #9c2d7a;
+    --p-primary-800: #7a225f;
+    --p-primary-900: #571845;
+    --p-primary-950: #3a0f2f;
+    --p-surface-0: #ffffff;
+    --p-surface-50: #fafafa;
+    --p-surface-100: #f4f4f5;
+    --p-surface-200: #e4e4e7;
+    --p-surface-300: #d4d4d8;
+    --p-surface-400: #a1a1aa;
+    --p-surface-500: #71717a;
+    --p-surface-600: #52525b;
+    --p-surface-700: #3f3f46;
+    --p-surface-800: #27272a;
+    --p-surface-900: #18181b;
+    --p-surface-950: #09090b;
+    --p-content-border-radius: 6px;
+      /* TODO delete later */
+    /* --color-surfaces-surface-blur-high:rgba(255, 255, 255, 0.80); */
+    --gradient-base-blue-point: #5C8DFF;
+    --gradient-base-violet-point: #A079FF;
+    --gradient-base-purple-point: #D06AD6;
+
+}
+.bg-primary-gradient {
+  background-image: var(--ai-color-gradient);
+}
+

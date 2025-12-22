@@ -1,0 +1,303 @@
+.azureSpeechWrap {
+  background: #fff;
+  position: relative;
+  border-radius: 24px;
+  padding: 12px 16px;
+}
+.azureSpeech {
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  background: transparent;
+}
+.azureSpeech_info {
+  overflow: scroll;
+  min-width: 684px;
+  max-height: 410px;
+  // height: 550px;
+  flex-shrink: 0;
+}
+.azureSpeechRespons {
+  margin: 5px 12px 15px 0px;
+}
+.process_icon {
+  width: 97px;
+  height: 24px;
+  margin: 20px 0px 0px 0px;
+}
+.summaryProcess {
+  display: flex;
+}
+.css-gradient-loader {
+  width: 35px;
+  height: 35px;
+  margin: 15px 20px 10px 20px;
+  position: relative;
+}
+
+.css-gradient-loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #855ee1 0%, #5c8dff 90deg, transparent 90deg);
+  -webkit-mask: radial-gradient(circle at center, transparent 60%, white 61%);
+  mask: radial-gradient(circle at center, transparent 60%, white 61%);
+  animation: rotate 1.2s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.new_icon {
+  width: 98px;
+  height: 48px;
+  cursor: pointer;
+  margin: 8px;
+}
+.suggestion_icon {
+  width: 130px;
+  height: 32px;
+  cursor: pointer;
+  margin: 12px 10px;
+}
+.azureSpeech_content {
+  // background: #fff;
+  // width: 475px;
+  // height: 304px;
+  // flex-shrink: 0;
+  // border-radius: 20px;
+  height: 48px;
+
+  .azureSpeech_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 48px;
+    .speech_icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+  }
+  // .azureSpeech_box {
+  //   display: flex;
+  //   flex-direction: column;
+  //   text-align: center;
+  //   font-size: 19px;
+  //   font-family: "Rookery New";
+  //   line-height: 25px;
+  //   font-weight: 500;
+  // }
+}
+
+.drag_indicator_icon {
+  width: 18px;
+}
+
+.speechBtn {
+  width: 475px;
+  height: 64px;
+  border-radius: 32px;
+  background: var(--Blur-Scrim-Dynamic-Surface, rgba(255, 255, 255, 0.6));
+  /* blur/Background Blur */
+  backdrop-filter: blur(30px);
+  display: flex;
+
+  .drag_indicator_icon {
+    width: 4px;
+    height: 47px;
+    margin-left: 15px;
+    margin-right: 2px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+
+  .close_icon {
+    width: 48px;
+    height: 48px;
+    margin-top: 8px;
+    margin-left: 9px;
+    cursor: pointer;
+  }
+
+  .collapse_icon {
+    width: 48px;
+    height: 48px;
+    margin-top: 8px;
+    margin-left: 9px;
+    cursor: pointer;
+  }
+
+  .drag_indicator {
+    flex: 1;
+  }
+
+  .action_indicator {
+    display: flex;
+  }
+
+  .record_time {
+    color: var(--Primary-accent, #855ee1);
+    text-align: center;
+    /* Blazer Type/Headline S */
+    font-family: var(--Type-Style-Headline-Font, "Rookery New");
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px; /* 133.333% */
+  }
+  .record_pausetime {
+    color: #92908f;
+    text-align: center;
+    /* Blazer Type/Headline S */
+    font-family: var(--Type-Style-Headline-Font, "Rookery New");
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px; /* 133.333% */
+  }
+  .notrecording_icon {
+    width: 48px;
+    height: 48px;
+    margin-top: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .record_icon {
+    width: 48px;
+    height: 48px;
+    margin-top: 8px;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.segments-list {
+  overflow: scroll;
+  color: #161c27;
+  border-radius: 4px;
+}
+
+.segment {
+  // margin-bottom: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.segment-header {
+  // padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+
+.speaker-badge {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.speakers1_icon {
+  width: 22px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.timestamp {
+  color: #666;
+}
+
+.segment-content {
+  // padding: 6px 10px;
+}
+
+.interim-segment {
+  color: #666;
+  font-style: italic;
+  padding: 6px 10px;
+}
+
+/* 说话人颜色区分 */
+.speaker-1 .segment-header {
+  background-color: #e3f2fd;
+}
+
+.speaker-2 .segment-header {
+  background-color: #e8f5e9;
+}
+
+.error-message {
+  color: #f44336;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffebee;
+  border-radius: 4px;
+}
+
+.pay-attention-home {
+  &_wrap {
+    min-width: 724px;
+    max-height: 540px;
+    background: #fff;
+    border-radius: 24px;
+    padding: 12px 16px;
+    &_top {
+      height: 36px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+
+      &_left {
+        background: radial-gradient(50% 50% at 50% 50%, #5c8dff 0%, #855ee1 100%);
+        -webkit-background-clip: text;
+        color: transparent;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+    &_audio {
+      height: 77px;
+      width: 100%;
+    }
+    &_content {
+      max-height: 530px;
+      width: 100%;
+      overflow: auto;
+    }
+    &_bottom {
+      height: 40px;
+      width: 100%;
+      display: flex;
+      border-top: 1px solid #cdcdcd;
+      align-items: center;
+      justify-content: space-between;
+
+      &_left {
+        font-size: 14px;
+      }
+      &_right {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+  }
+}

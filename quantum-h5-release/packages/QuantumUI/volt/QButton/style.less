@@ -1,0 +1,235 @@
+.qbtn {
+  border-color: var(--qbtn-border-color);
+  background-color: var(--qbtn-background-color);
+  color: var(--qbtn-color);
+
+  &:hover {
+    // border-color: var(--qbtn-hover-border-color);
+    background-image: linear-gradient(to right,
+        var(--color-state-focus-focus-hover),
+        var(--color-state-focus-focus-hover));
+    // color: var(--qbtn-hover-color);
+  }
+
+  &:active {
+    // border-color: var(--qbtn-active-border-color);
+    // background-color: var(--qbtn-active-background-color);
+    // color: var(--qbtn-active-color); --color-state-focus-focus-pressed
+    background-image: linear-gradient(to right,
+        var(--color-state-focus-focus-pressed),
+        var(--color-state-focus-focus-pressed));
+  }
+
+  // &:hover {
+  //   border-color: var(--qbtn-hover-border-color);
+  //   background-color: var(--qbtn-hover-background-color);
+  //   color: var(--qbtn-hover-color);
+  // }
+  // &:active  {
+  //   border-color: var(--qbtn-active-border-color);
+  //   background-color: var(--qbtn-active-background-color);
+  //   color: var(--qbtn-active-color);
+  // }
+  &:disabled {
+    border-color: var(--qbtn-disabled-border-color);
+    background-color: var(--color-state-focus-focus-hover);
+    opacity: var(--opacity-disabled);
+    color: var(--qbtn-disabled-color);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.qbtn_neutral_neutral .qbtn_neutral_inverseOutlined,
+.qbtn_neutral_tonal,
+.qbtn_neutral_overlay,
+.qbtn_neutral_inverseFilled,
+.qbtn_neutral_inverseNone,
+.qbtn_neutral_text {
+  &:hover {
+    background-image: linear-gradient(to right,
+        var(--color-state-focus-on-focus-pressed),
+        var(--color-state-focus-on-focus-pressed));
+  }
+
+  &:active {
+    background-image: linear-gradient(to right,
+        var(--color-state-focus-on-focus-pressed),
+        var(--color-state-focus-on-focus-pressed));
+  }
+
+  &:disabled {
+    border-color: var(--qbtn-disabled-border-color);
+    background-color: var(--qbtn-disabled-background-color);
+    color: var(--qbtn-disabled-color);
+  }
+}
+
+.qbtn_neutral_inverseOutlined {
+  background-color: var(--qbtn-color);
+}
+
+// 默认文本样式
+.qbtn_neutral_text {
+  background-color: transparent;
+  color: var(--color-focus-focus);
+}
+
+.qbtn_primary_text {
+  background-color: transparent;
+  color: var(--color-primary-primary);
+}
+
+.qbtn_error_text {
+  background-color: transparent;
+  color: var(--color-semantic-error-error);
+}
+
+.qbtn_neutral_tonal {
+  background-color: var(--color-focus-container);
+  // color: var(--color-focus-focus);
+  color: var(--color-asaaa);
+}
+
+.qbtn_neutral_overlay {
+  background-color: transparent;
+  color: var(--color-focus-focus);
+}
+
+.qbtn_parent_box_neutral_inverseOutlined {
+  background-color: var(--qbtn-background-color);
+}
+
+.qbtn_split {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.qiconbtn {
+  // @apply bg-surfaces-surface-blur-high
+  border-color: var(--qbtn-border-color);
+
+  background-color: var(--color-surfaces-surface-blur-high, rgba(255, 255, 255, 0.80));
+  // color: var(--qbtn-color);
+  color: var(--color-primary-primary);
+  border: 1.5px solid var(--surfaces-prompt-bar-stroke);
+
+  &:hover {
+    // border-color: var(--qbtn-hover-border-color);
+    background-image: linear-gradient(to right,
+        var(--color-state-focus-focus-hover),
+        var(--color-state-focus-focus-hover));
+  }
+
+  &:active {
+    background-image: linear-gradient(to right,
+        var(--color-state-focus-focus-pressed),
+        var(--color-state-focus-focus-pressed));
+  }
+
+  &:disabled {
+
+    border-color: var(--qbtn-disabled-border-color);
+    // background-color: var(--color-state-focus-focus-hover);
+    // background-color: var(--color-state-focus-focus-hover);
+
+    background-color: var(--color-surfaces-surface-blur-high, rgba(255, 255, 255, 0.80));
+    opacity: var(--opacity-disabled);
+    // color: var(--qbtn-disabled-color);
+    color: var(--color-primary-primary);
+    background-image: linear-gradient(to right,
+        var(--color-state-focus-focus-hover),
+        var(--color-state-focus-focus-hover));
+  }
+
+  &:focus-visible {
+    outline-color: var(--color-primary-primary);
+    outline-offset: 2px;
+    transform: scale(0.9);
+  }
+}
+
+.qiconbtn_chat,
+.qbtn_chat_neutral {
+  background-image: linear-gradient(60deg,
+      var(--gradient-base-blue-point) 24.05%,
+      var(--gradient-base-violet-point) 59.56%,
+      var(--gradient-base-purple-point) 95.51%);
+  color: var(--color-focus-on-focus);
+
+  &:hover {
+    background-image: linear-gradient(60deg,
+        var(--gradient-base-blue-point) 24.05%,
+        var(--gradient-base-violet-point) 59.56%,
+        var(--gradient-base-purple-point) 95.51%);
+    color: var(--color-focus-on-focus);
+  }
+
+  &:active {
+    background-image: linear-gradient(60deg,
+        var(--gradient-base-blue-point) 24.05%,
+        var(--gradient-base-violet-point) 59.56%,
+        var(--gradient-base-purple-point) 95.51%);
+    color: var(--color-focus-on-focus);
+  }
+
+  &:disabled {
+    opacity: 1 !important;
+    background-image: linear-gradient(60deg,
+        var(--gradient-base-blue-point) 24.05%,
+        var(--gradient-base-violet-point) 59.56%,
+        var(--gradient-base-purple-point) 95.51%);
+    color: var(--color-focus-on-focus) !important;
+
+    span {
+      color: var(--color-focus-on-focus) !important;
+    }
+
+    svg {
+      color: var(--color-focus-on-focus) !important;
+    }
+  }
+}
+
+.qiconbtn_primary {
+  background-color: var(--color-primary-primary) !important;
+  color: var(--color-on-primary);
+
+  &:hover {
+    background-color: var(--color-primary-primary) !important;
+    color: var(--color-on-primary);
+  }
+
+  &:active {
+    background-color: var(--color-primary-primary) !important;
+    color: var(--color-on-primary);
+  }
+
+  &:disabled {
+    background-color: var(--color-primary-primary) !important;
+    color: var(--color-on-primary) !important;
+
+    span {
+      color: var(--color-on-primary) !important;
+    }
+
+    svg {
+      color: var(--color-on-primary) !important;
+    }
+
+    div {
+      background-color: var(--color-primary-primary) !important;
+    }
+  }
+}
+
+.qiconbtn_actions {
+  color: var(--color-focus-focus) !important;
+}
+
+.qiconbtn_chat{
+  border: none !important;
+}

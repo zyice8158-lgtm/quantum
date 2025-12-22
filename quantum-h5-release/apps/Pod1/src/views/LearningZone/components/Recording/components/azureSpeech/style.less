@@ -1,0 +1,156 @@
+.azureSpeechWrap{
+  background: transparent;
+  position: relative;
+}
+.azureSpeech {
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  background: transparent;
+}
+.azureSpeech_info {
+  overflow: scroll;
+  min-width: 684px;
+  max-height: 410px;
+  flex-shrink: 0;
+}
+.azureSpeechRespons{
+	margin: 5px 12px 15px 0px;
+}
+.process_icon{
+  width: 97px;
+  height: 24px;
+  margin: 20px 0px 0px 0px;
+}
+.summaryProcess{
+  display: flex;
+}
+.css-gradient-loader {
+  width: 35px;
+  height: 35px;
+  margin: 15px 20px 10px 20px;
+  position: relative;
+}
+
+.css-gradient-loader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--color-primary) 0%,
+    var(--color-ai-step-1) 90deg,
+    transparent 90deg
+  );
+  -webkit-mask: radial-gradient(
+    circle at center,
+    transparent 60%,
+    var(--color-surface) 61%
+  );
+  mask: radial-gradient(
+    circle at center,
+    transparent 60%,
+    var(--color-surface) 61%
+  );
+  animation: rotate 1.2s linear infinite;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+.new_icon{
+  width: 98px;
+  height: 48px;
+  cursor: pointer;
+  margin: 8px;
+}
+.suggestion_icon{
+  width: 130px;
+  height: 32px;
+  cursor: pointer;
+  margin: 12px 10px;
+}
+.azureSpeech_content {
+  height: 48px;
+
+  .azureSpeech_box {
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    line-height: 48px;
+    .speech_icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.drag_indicator_icon {
+  width: 18px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.segments-list {
+  overflow: scroll;
+  color: var(--color-on-focus-container);
+  border-radius: 4px;
+}
+
+.segment {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.segment-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+
+.speaker-badge {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.speakers1_icon {
+  width: 22px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.timestamp {
+  color: var(--color-inverse-on-focus);
+}
+
+.segment-content {
+  // padding: 6px 10px;
+}
+
+.interim-segment {
+  color: var(--color-inverse-on-focus);
+  font-style: italic;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.word {
+  display: inline-block;
+  margin-right: 2px;
+  line-height: 1.8;
+  cursor: pointer;
+  white-space: pre-wrap;
+}
+.segment {
+  transition: background-color .2s ease, box-shadow .2s ease;
+}

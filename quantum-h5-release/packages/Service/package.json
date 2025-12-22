@@ -1,0 +1,21 @@
+{
+  "name": "@libs/service",
+  "version": "1.0.0",
+  "description": "Service utilities for quantum-h5 project.",
+  "main": "index.ts",
+  "dependencies": {
+    "marked": "catalog:",
+    "uuid": "catalog:"
+  },
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@libs/q-mock": "workspace:*",
+    "@quantum/use": "workspace:*",
+    "@libs/p-comps": "workspace:*",
+    "public-type": "workspace:*",
+    "primevue": "catalog:"
+  }
+}

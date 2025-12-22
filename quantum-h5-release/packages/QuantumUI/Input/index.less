@@ -1,0 +1,56 @@
+.q-input_content{
+    display: flex;
+    align-items: end;
+    height: 100%;
+    padding-right: 4px;
+    & > button {
+        margin-bottom: 4px;
+    }
+    & > input, textarea {
+        flex: 1;
+        height: fit-content;
+        border: none;
+        outline: none;
+        margin: 12px 0 12px 0;
+        flex-shrink: 0;
+        min-width: 0;
+        field-sizing: content;
+        &::placeholder {
+            font-size: 16px;
+        }
+    }
+    & > textarea {
+        padding: 0 8px;
+        resize: none;
+        box-sizing: border-box;
+        font-size: 16px;
+        overflow-y: auto;
+        min-height: calc(24px * var(--textarea-min-rows, 1));
+        max-height: calc(24px * var(--textarea-max-rows, 3));
+    }
+    & > svg {
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .upload-file-icon {
+        display: flex;
+        height: 43px;
+        align-items: center;
+        border-radius: 1008px;
+        border: 1.13px solid var(--Colors-Accents-Primary-Fixed-Dim, #A6C8FF);
+        padding: 0 12px;
+        & > .icon {
+            margin-right: 13px;
+        }
+        & > img {
+            cursor: pointer;
+        }
+        .upload-file-text {
+            font-weight: 700;
+            font-style: Bold;
+            font-size: 15.75px;
+            text-align: center;
+            margin-right: 16px;
+        }
+    }
+}

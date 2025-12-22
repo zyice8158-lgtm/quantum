@@ -1,0 +1,144 @@
+{
+  "common": {
+    "confirm": "确认",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "add": "添加",
+    "close": "关闭",
+    "submit": "提交",
+    "reset": "重置",
+    "search": "搜索",
+    "loading": "加载中...",
+    "noData": "暂无数据",
+    "success": "操作成功",
+    "error": "操作失败",
+    "warning": "警告",
+    "demo": "国际化示例",
+    "basicUsage": "基本用法"
+  },
+  "chat": {
+    "title": "聊天",
+    "inputPlaceholder": "请输入消息...",
+    "send": "发送",
+    "clearHistory": "清空历史记录",
+    "refresh": "刷新",
+    "refreshing": "刷新中...",
+    "newChat": "新建聊天",
+    "history": "历史记录",
+    "relatedQuestions": "相关问题",
+    "recommendations": "推荐",
+    "skills": "技能",
+    "knowledgeBase": "知识库",
+    "sendMessageError": "发送消息失败",
+    "disclaimer": "人工智能可能出错，请核实准确性."
+  },
+  "home": {
+    "welcome": "欢迎使用",
+    "description": "这是一个基于量子计算的智能聊天系统",
+    "getStarted": "开始使用"
+  },
+  "layout": {
+    "chats": "聊天记录",
+    "settings": "设置",
+    "language": "语言",
+    "theme": "主题",
+    "recording": "Recording..."
+  },
+  "settings": {
+    "title": "设置",
+    "languageSetting": "语言设置",
+    "themeSetting": "主题设置",
+    "darkMode": "深色模式",
+    "lightMode": "浅色模式",
+    "systemMode": "跟随系统",
+    "personal": "个人",
+    "account": "账户",
+    "devices": "设备",
+    "general": "通用",
+    "language": "语言",
+    "launchOptions": "启动选项",
+    "voice": "语音"
+  },
+  "podcast": {
+    "podcastCardTitle": "Podcast has been generated, Saved in learning zone",
+    "generatePodcast": "Generate Podcast",
+    "customizePodcast": "Customize Podcast",
+    "podcastInfoPartone": "Generate a podcast based on the above content；",
+    "podcastInfoParttwo": "Podcast generation completed,",
+    "podcastInfoPartthree": "language is",
+    "podcastInfoPartfour": "speaker 1 is",
+    "podcastInfoPartfive": "speaker 2 is",
+    "podcastGenerateInfo": "It may take a few minutes. No need to stick around !",
+    "podcastFileParsing": "File pasing...",
+    "podcastContextUnderstanding": "Context understanding...",
+    "podcastListen": "*You could listen to the Podcast on your Motorola Phone"
+  },
+  "LZ_Editor_Header_Text": "Text",
+  "LZ_Editor_Font_Family_Default": "Default font family",
+  "LZ_Editor_Font_Size_Default": "Default font Size",
+  "LZ_Editor_Color_Default": "Default color",
+  "LZ_Editor_Color_Clear": "Clear back color",
+  "LZ_Editor_Text_Style_Underline": "Underline",
+  "LZ_Editor_Indent_Increase": "Increase",
+  "LZ_Editor_Indent_Decrease": "Decrease",
+  "LZ_Editor_Justify_Left": "Left",
+  "LZ_Editor_Justify_Right": "Right",
+  "LZ_Editor_Justify_Center": "Center",
+  "LZ_Editor_Justify_Justify": "Justify",
+  "LZ_Editor_BlockQuote_Title": "Quote",
+  "LZ_Editor_Todo_Todo": "Todo",
+  "LZ_Editor_Common_Center": "Enter",
+  "LZ_Editor_TableModule_Header": "Header",
+  "LZ_Editor_TableModule_Width_Auto": "Width auto",
+  "LZ_Editor_TableModule_Insert_Row": "Insert row",
+  "LZ_Editor_TableModule_Delete_Row": "Delete row",
+  "LZ_Editor_TableModule_Insert_Col": "Insert column",
+  "LZ_Editor_TableModule_Delete_Col": "Delete column",
+  "LZ_Editor_TableModule_Delete_Table": "Delete Table",
+  "LZ_Editor_Undo_Undo": "Undo",
+  "LZ_Editor_Undo_Redo": "Redo",
+  "LZ_Notes_Button_PDF": "Export as PDF",
+  "LZ_Notes_Button_Word": "Export as Word",
+  "learningZone": {
+    "featuredSamples": "精选示例"
+  },
+  "payAttention": {
+    "errorTitle": "Recording Has Stopped: ",
+    "errorContent": "Recording stopped unexpectedly. Please restart to continue.",
+    "temporaryErrorContent": "Recording has been paused due to an unexpected interruption.",
+    "stepAnalyzing": "Analyzing the transcript",
+    "stepIdentifyingTopics": "Identifying main topics",
+    "stepIdentifyingParticipants": "Identifying action items",
+    "stepIntegratingNotes": "Formatting summary",
+    "saveToLearningZone": "Do you want to save to Learning Zone?"
+  },
+  "eventTime": {
+    "found": "以下是我找到的内容："
+  },
+  "answerTextCard": {
+    "meetingDetails": "以下是您的会议详情：",
+    "viewCalendar": "查看Outlook日历"
+  },
+   "live": {
+    "thinking": "Thinking...",
+    "trasition": {
+      "startCamera": "Starting Camera...",
+      "endLive": "Ending live session..."
+    },
+    "audio": {
+      "default": "Speak when you are ready"
+    },
+    "video": {
+      "default": "Center what you want to capture"
+    },
+    "error": {
+      "camera_occupied": "Your camera is in use by another app. Close it and try again.",
+      "permission_denied": "Camera permission denied. Please grant permission and try again.",
+      "no_camera": "No camera found. Please check your device and try again.",
+      "unknown_error": "Unable to access camera. Please try again or check camera settings.",
+      "mic": "I could not detect any audio. Please check your microphone or try again."
+    }
+  }
+}

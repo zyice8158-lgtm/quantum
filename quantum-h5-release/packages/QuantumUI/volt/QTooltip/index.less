@@ -1,0 +1,254 @@
+// =================================================================
+// QTooltip 组件样式
+// =================================================================
+
+// 变量定义
+@tooltip-bg: var(--color-surfaces-surface-bright, #fff);
+@tooltip-color: var(--color-text-on-surface, #333);
+@tooltip-shadow-heavy: var(--effects-elevation-drop-shadow-heavy, rgba(0, 0, 0, 0.3));
+@tooltip-shadow-light: var(--effects-elevation-drop-shadow-light, rgba(0, 0, 0, 0.12));
+@tooltip-padding: var(--p-tooltip-padding, 4px 12px);
+@tooltip-radius: var(--p-tooltip-border-radius, 4px);
+@tooltip-max-width: var(--p-tooltip-max-width, 300px);
+@tooltip-gutter: var(--p-tooltip-gutter, 4px);
+@arrow-size: 6px;
+
+// 包装器
+.q-tooltip-wrapper {
+  display: inline-block;
+}
+
+.q-tooltip-trigger {
+  display: inline-block;
+  cursor: pointer;
+}
+
+// 内容区域
+.q-tooltip-content {
+  position: fixed;
+  z-index: 2000;
+  background-color: @tooltip-bg;
+  color: @tooltip-color;
+  padding: @tooltip-padding;
+  border-radius: @tooltip-radius;
+  font-size: 12px;
+  max-width: @tooltip-max-width;
+  white-space: pre-line;
+  word-break: break-word;
+  box-shadow: 0 1px 2px 0 @tooltip-shadow-heavy,
+    0 2px 6px 2px @tooltip-shadow-light;
+
+  // 箭头基础样式
+  .q-tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: @arrow-size solid transparent;
+  }
+
+  // Top 位置
+  &--top {
+    .q-tooltip-arrow {
+      bottom: -@arrow-size;
+      left: 50%;
+      margin-left: -@arrow-size;
+      border-top-color: @tooltip-bg;
+      border-bottom: none;
+    }
+  }
+
+  // Bottom 位置
+  &--bottom {
+    .q-tooltip-arrow {
+      top: -@arrow-size;
+      left: 50%;
+      margin-left: -@arrow-size;
+      border-bottom-color: @tooltip-bg;
+      border-top: none;
+    }
+  }
+
+  // Left 位置
+  &--left {
+    .q-tooltip-arrow {
+      right: -@arrow-size;
+      top: 50%;
+      margin-top: -@arrow-size;
+      border-left-color: @tooltip-bg;
+      border-right: none;
+    }
+  }
+
+  // Right 位置
+  &--right {
+    .q-tooltip-arrow {
+      left: -@arrow-size;
+      top: 50%;
+      margin-top: -@arrow-size;
+      border-right-color: @tooltip-bg;
+      border-left: none;
+    }
+  }
+}
+
+// 动画
+.q-tooltip-fade-enter-active,
+.q-tooltip-fade-leave-active {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.q-tooltip-fade-enter-from,
+.q-tooltip-fade-leave-to {
+  opacity: 0;
+}
+
+// =================================================================
+// PrimeVue Tooltip 指令样式 (v-tooltip)
+// =================================================================
+[data-pc-name="tooltip"] {
+  &[data-pc-section="root"] {
+    position: absolute;
+    display: none;
+    max-width: @tooltip-max-width;
+  }
+
+  &[data-p-position="right"],
+  &[data-p-position="left"] {
+    padding: 0 @tooltip-gutter;
+  }
+
+  &[data-p-position="top"],
+  &[data-p-position="bottom"] {
+    padding: @tooltip-gutter 0;
+  }
+
+  // 箭头基础样式
+  [data-pc-section="arrow"] {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+  // Right 位置箭头
+  &[data-p-position="right"] [data-pc-section="arrow"] {
+    top: 50%;
+    left: 0;
+    margin-top: -@arrow-size;
+    margin-left: -@arrow-size;
+    border-width: @arrow-size;
+    border-right-color: @tooltip-bg;
+  }
+
+  // Left 位置箭头
+  &[data-p-position="left"] [data-pc-section="arrow"] {
+    top: 50%;
+    right: 0;
+    margin-top: -@arrow-size;
+    margin-right: -@arrow-size;
+    border-width: @arrow-size;
+    border-left-color: @tooltip-bg;
+  }
+
+  // Top 位置箭头
+  &[data-p-position="top"] [data-pc-section="arrow"] {
+    left: 50%;
+    bottom: 0;
+    margin-left: -@arrow-size;
+    margin-bottom: -@arrow-size;
+    border-width: @arrow-size;
+    border-top-color: @tooltip-bg;
+  }
+
+  // Bottom 位置箭头
+  &[data-p-position="bottom"] [data-pc-section="arrow"] {
+    left: 50%;
+    top: 0;
+    margin-left: -@arrow-size;
+    margin-top: -@arrow-size - 2px;
+    border-width: @arrow-size;
+    border-bottom-color: @tooltip-bg;
+  }
+
+  // 文本样式
+  [data-pc-section="text"] {
+    white-space: pre-line;
+    word-break: break-word;
+    background: @tooltip-bg;
+    color: @tooltip-color;
+    padding: @tooltip-padding;
+    box-shadow: 0 1px 2px 0 @tooltip-shadow-heavy,
+      0 2px 6px 2px @tooltip-shadow-light !important;
+    border-radius: @tooltip-radius;
+    font-size: 12px;
+  }
+
+  // =================================================================
+  // 自定义箭头样式：.custom-arrow-tooltip
+  // =================================================================
+  &.custom-arrow-tooltip {
+    // 箭头左对齐 (top/bottom)
+    .arrow-left {
+      left: 10px !important;
+      right: auto !important;
+      margin-left: 0 !important;
+    }
+
+    // 箭头右对齐 (top/bottom)
+    .arrow-right {
+      left: auto !important;
+      right: 10px !important;
+      margin-left: 0 !important;
+    }
+
+    // 箭头居中 (top/bottom)
+    .arrow-center {
+      left: 50% !important;
+      margin-left: -@arrow-size !important;
+    }
+  }
+
+  // Left 方向自定义箭头
+  &[data-p-position="left"].custom-arrow-tooltip {
+    [data-pc-section="arrow"] {
+      top: 50% !important;
+      right: 0 !important;
+      left: auto !important;
+      bottom: auto !important;
+      margin-top: -@arrow-size !important;
+      margin-right: -@arrow-size !important;
+      margin-bottom: 0 !important;
+      border-width: @arrow-size !important;
+      border-color: transparent !important;
+      border-left-color: @tooltip-bg !important;
+    }
+
+    .arrow-center {
+      top: 50% !important;
+      margin-top: -@arrow-size !important;
+    }
+  }
+
+  // Right 方向自定义箭头
+  &[data-p-position="right"].custom-arrow-tooltip {
+    [data-pc-section="arrow"] {
+      top: 50% !important;
+      left: 0 !important;
+      right: auto !important;
+      bottom: auto !important;
+      margin-top: -@arrow-size !important;
+      margin-left: -@arrow-size !important;
+      margin-bottom: 0 !important;
+      border-width: @arrow-size !important;
+      border-color: transparent !important;
+      border-right-color: @tooltip-bg !important;
+    }
+
+    .arrow-center {
+      top: 50% !important;
+      margin-top: -@arrow-size !important;
+    }
+  }
+}

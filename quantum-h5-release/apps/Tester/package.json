@@ -1,0 +1,46 @@
+{
+  "name": "@quantum/tester",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
+    "lint:eslint": "eslint . --fix --cache",
+    "lint": "run-s lint:*"
+  },
+  "dependencies": {
+    "vue": "catalog:",
+    "vue-router": "catalog:",
+    "@libs/p-comps": "workspace:*",
+    "@libs/theme": "workspace:*",
+    "@libs/service": "workspace:*",
+    "@quantum/icons": "workspace:*",
+    "@quantum/use": "workspace:*",
+    "tailwindcss": "catalog:",
+    "tailwindcss-primeui": "catalog:",
+    "primevue": "catalog:"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:",
+    "@vitejs/plugin-vue-jsx": "catalog:",
+    "@vue/eslint-config-typescript": "^14.6.0",
+    "@vue/tsconfig": "^0.8.1",
+    "@tailwindcss/vite": "catalog:",
+    "eslint": "catalog:",
+    "eslint-plugin-oxlint": "~1.23.0",
+    "eslint-plugin-vue": "catalog:",
+    "jiti": "^2.6.1",
+    "npm-run-all2": "^8.0.4",
+    "oxlint": "~1.23.0",
+    "typescript": "catalog:",
+    "postcss": "catalog:",
+    "tailwindcss": "catalog:",
+    "vite": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}

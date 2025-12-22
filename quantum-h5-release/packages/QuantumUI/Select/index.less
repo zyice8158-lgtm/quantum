@@ -1,0 +1,51 @@
+.q-select {
+    display: inline-block;
+    background-color: #fff;
+    box-shadow: 0px 1px 2px 0px #0000004D;
+    overflow-y: auto;
+    align-self: flex-end;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 20px;
+        
+    &_dropdown {
+        border-radius: 20px;
+        padding-right: 4px;
+        padding-left: 4px;
+    }
+    &_item {
+        // height: 48px;
+        display: flex;
+        box-sizing: border-box;
+        padding: 14px 15px;
+        align-items: center;
+        cursor: pointer;
+        &:first-child {
+            border-radius: 20px 20px 0 0;
+        }
+        &:last-child {
+            border-radius: 0 0 20px 20px;
+        }
+        &.active {
+            background-color: #F5F2FE;
+        }
+        &:hover {
+            background-color: #F5F2FE;
+        }
+        & > img {
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        & > .text {
+            font-family: 'Rookery New';
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+    }
+}

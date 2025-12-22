@@ -1,0 +1,114 @@
+@supports (not (scrollbar-width: thin)) or (selector(::-webkit-scrollbar)) {
+  .lscroll-body::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@supports (scrollbar-width: none) and (not selector(::-webkit-scrollbar)) {
+  .lscroll-body {
+    scrollbar-width: none;
+  }
+}
+:root {
+  --scrollbar-size: 12px;
+}
+
+.lscroll-track {
+  position: absolute;
+  cursor: pointer;
+  background-color: var(--scrollbar-track-bg, #fafafa);
+  border-radius: inherit;
+}
+.lscroll-inside {
+  .lscroll-track-H {
+    bottom: 0;
+  }
+}
+.lscroll-outside {
+  .lscroll-track-H {
+    bottom: calc(-1 * var(--scrollbar-size));
+  }
+}
+.lscroll-track-H {
+  left: 0;
+  width: 100%;
+  height: var(--scrollbar-size);
+  border-radius: var(--scrollbar-size);
+
+  .lscroll-thumb {
+    top: 0;
+    height: var(--scrollbar-size);
+    left: var(--scrollbar-move);
+    width: var(--scrollbar-ratio);
+  }
+}
+.lscroll-inside {
+  .lscroll-track-V {
+    right: 0;
+  }
+}
+.lscroll-outside {
+  .lscroll-track-V {
+    right: calc(-1 * var(--scrollbar-size));
+  }
+}
+.lscroll-track-V {
+  top: 0;
+  width: var(--scrollbar-size);
+  height: 100%;
+  border-radius: var(--scrollbar-size);
+  .lscroll-thumb {
+    left: 0;
+    width: var(--scrollbar-size);
+    top: var(--scrollbar-move);
+    height: var(--scrollbar-ratio);
+  }
+}
+
+.lscroll-thumb {
+  position: absolute;
+  z-index: 1;
+  border-radius: calc(var(--scrollbar-size) / 2);
+  transition: opacity 80ms ease;
+  background-color: var(--scrollbar-thumb-bg, #acacac);
+}
+
+.lscroll-body:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  transition: box-shadow 0.3s;
+  content: '';
+  pointer-events: none;
+  z-index: 1;
+}
+.lscroll-shadow-left {
+  .lscroll-body:before {
+    box-shadow: inset 10px 0 10px -8px #0000001c;
+  }
+}
+.lscroll-body:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  transition: box-shadow 0.3s;
+  content: '';
+  pointer-events: none;
+  z-index: 1;
+}
+.lscroll-shadow-right {
+  .lscroll-body:after {
+    box-shadow: inset -10px 0 10px -8px #0000001c;
+  }
+}
+
+@media (forced-colors: active) {
+  :root {
+    --scrollbar-thumb-bg: ButtonBorder;
+    --scrollbar-track-bg: GrayText;
+  }
+}

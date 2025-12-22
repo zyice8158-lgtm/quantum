@@ -1,0 +1,24 @@
+.syncSlider{
+    transform: translateX(-100%);
+    animation: progressChanging 20s linear forwards;
+}
+@keyframes progressChanging{
+    0%{
+        transform: translateX(-100%);
+    }
+    20%{
+        transform: translateX(-80%);
+    }
+    25%{
+        transform: translateX(-80%);
+    }
+    60%{
+        transform: translateX(-20%);
+    }
+    70%{
+        transform: translateX(-10%);
+    }
+    100%{
+        transform: translateX(-5%);
+    }
+}

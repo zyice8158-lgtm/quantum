@@ -1,0 +1,153 @@
+.azureSpeech {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  margin-bottom: 16px;
+  margin-left: -4px;
+}
+
+.segments-list {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  &.is-scrolling {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+.azureSpeechRespons{
+	margin: 5px 12px 15px 0px;
+}
+.process_icon{
+  width: 97px;
+  height: 24px;
+  margin: 20px 0px 0px 0px;
+}
+.summaryProcess{
+  display: flex;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+.new_icon{
+  width: 98px;
+  height: 48px;
+  cursor: pointer;
+  margin: 8px;
+}
+.suggestion_icon{
+  width: 130px;
+  height: 32px;
+  cursor: pointer;
+  margin: 12px 10px;
+}
+.azureSpeech_content {
+  // background: #fff;
+  // width: 475px;
+  // height: 304px;
+  // flex-shrink: 0;
+  // border-radius: 20px;
+  height: 48px;
+
+  .azureSpeech_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 48px;
+    .speech_icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+  }
+  // .azureSpeech_box {
+  //   display: flex;
+  //   flex-direction: column;
+  //   text-align: center;
+  //   font-size: 19px;
+  //   font-family: "Rookery New";
+  //   line-height: 25px;
+  //   font-weight: 500;
+  // }
+}
+
+.drag_indicator_icon {
+  width: 18px;
+}
+
+.segment {
+  color: var(--color-text-on-surface);
+  border-radius: var(--radius-4);
+  line-height: var(--leading-body-l);
+  overflow: hidden;
+  padding-left: 4px;
+}
+
+.speaker-badge {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.segment-content {
+  color: var(--color-text-on-surface);
+}
+
+.interim-segment {
+  font-size: var(--text-body-m);
+  display: block;
+  width: 100%;
+  padding-left: 4px;
+  line-height: var(--leading-body-l);
+  background: linear-gradient(
+    to right,
+    var(--color-ai-chrome-gradient-step-0) 0%,
+    var(--color-ai-chrome-gradient-step-13) 13%,
+    var(--color-ai-chrome-gradient-step-25) 25%,
+    var(--color-ai-chrome-gradient-step-38) 38%,
+    var(--color-ai-chrome-gradient-step-51) 51%,
+    var(--color-ai-chrome-gradient-step-63) 63%,
+    var(--color-ai-chrome-gradient-step-75) 75%,
+    var(--color-ai-chrome-gradient-step-87) 87%,
+    var(--color-ai-chrome-gradient-step-100) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+}
+.segment--active {
+  border-radius: var(--radius-8);
+  padding: 4px;
+  background: var(--color-primary-container);
+}
+
+.word {
+  display: inline-block;
+  line-height: var(--leading-body-l);
+  font-size: var(--text-body-m);
+  cursor: pointer;
+  white-space: pre-wrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  padding: 2px 0;
+  border-radius: 3px;
+
+  // 只为英文单词添加右边距，模拟单词之间的空格
+  &.word--english {
+    margin-right: 2px;
+    padding: 2px 1px;
+  }
+}
+
+.segment {
+  transition: background-color .2s ease, box-shadow .2s ease;
+}
+.empty-content {
+  font-size: var(--text-body-m);
+  line-height: var(--leading-body-l);
+  color: var(--color-on-focus-container);
+  margin-bottom: 16px;
+  cursor: not-allowed;
+}

@@ -1,0 +1,34 @@
+// 定义LESS颜色变量
+@color-vars: {
+hover-color: #edf5ff;
+select-color: #d9e6ff;
+chat-bg: #f4f9ff;
+chat-pkb-bg: #f2f7ff;
+br-color: #eaeaea;
+// color-error: #ea1313;
+primary-color: #4663ff;
+primary-hover-color: #364CF5;
+text-color1: #18181B;
+text-color2: #3F3F46;
+text-color3: #52525B;
+text-color4: #6E6E78;
+text-color5: #D4D4D8;
+bg-color1: #FFFFFF;
+bg-color2: #F4F4F5;
+wireframe-color1: #E4E4E7;
+btn-focus-outline-color: #2A2E89;
+};
+// 生成CSS变量
+:root {
+    each( @color-vars , {
+        --@{key}: value;
+    });
+}
+each(@color-vars, {
+    @{key}: @value;
+  });
+:export{
+    each(@color-vars, {
+        @{key}: @value;
+      });
+};

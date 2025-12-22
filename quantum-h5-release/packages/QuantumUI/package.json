@@ -1,0 +1,35 @@
+{
+  "name": "@libs/p-comps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "private": true,
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@libs/service": "workspace:*",
+    "@primeuix/utils": "catalog:",
+    "@primevue/icons": "catalog:",
+    "@quantum/icons": "workspace:*",
+    "@quantum/use": "workspace:",
+    "@vueuse/core": "catalog:",
+    "lodash-es": "^4.17.21",
+    "markdown-it": "^14.1.0",
+    "marked": "catalog:",
+    "primevue": "catalog:",
+    "tailwind-merge": "catalog:",
+    "uuid": "^11.1.0",
+    "vue": "catalog:",
+    "vue-router": "catalog:",
+    "vue-i18n": "catalog:"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "less": "^4.2.0",
+    "vite-plugin-eslint": "^1.8.1",
+    "vue-tsc": "^2.2.8"
+  }
+}

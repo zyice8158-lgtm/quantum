@@ -1,0 +1,13 @@
+@theme static {
+  /* Corner rounded Variables */
+   --radius-0: 0;
+   --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-32: 32px;
+  --radius-48: 48px;
+  --radius-max: 10000px;/* 使用10000px代替1000px，因为1000px在实际应用中可能过大 */
+}

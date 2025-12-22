@@ -1,0 +1,32 @@
+{
+  "name": "@libs/q-mock",
+  "displayName": "@libs/q-mock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ],
+  "lint-staged": {
+    "**/src/**/*.{ts,vue}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@libs/p-comps": "workspace:*",
+    "@types/mockjs": "^1.0.10",
+    "mockjs": "^1.1.0"
+  }
+}

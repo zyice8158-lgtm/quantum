@@ -1,0 +1,7 @@
+@import "@libs/theme";
+@source "../../../../packages/**/*.{vue,js,ts,jsx,tsx}";
+
+
+:root{
+  background: rgb(50, 135, 161);
+}

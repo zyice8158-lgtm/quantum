@@ -1,0 +1,53 @@
+{
+  "name": "@quantum/devui",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
+    "lint:eslint": "eslint . --fix --cache",
+    "lint": "run-s lint:*"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "catalog:",
+    "@bty/chat-logic-core": "https://web-bty-sdk.oss-cn-hangzhou.aliyuncs.com/chat-logic-core/0.0.19/chat-logic-core.tar.gz?t=1",
+    "@libs/p-comps": "workspace:*",
+    "@libs/service": "workspace:*",
+    "@libs/theme": "workspace:*",
+    "@quantum/icons": "workspace:*",
+    "@quantum/use": "workspace:*",
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^5.1.12",
+    "animejs": "catalog:",
+    "lottie-web": "catalog:",
+    "primeicons": "^7.0.0",
+    "primevue": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vitejs/plugin-vue-jsx": "catalog:",
+    "@vue/eslint-config-typescript": "^14.6.0",
+    "@vue/tsconfig": "^0.8.1",
+    "eslint": "catalog:",
+    "eslint-plugin-oxlint": "~1.23.0",
+    "eslint-plugin-vue": "catalog:",
+    "jiti": "^2.6.1",
+    "npm-run-all2": "^8.0.4",
+    "oxlint": "~1.23.0",
+    "postcss": "catalog:",
+    "sass-embedded": "^1.96.0",
+    "shiki": "^3.19.0",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}

@@ -1,0 +1,139 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &.indicators-style {
+    .carousel-track {
+      gap: 0px;
+    }
+  }
+
+  .carousel-track {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+    flex-wrap: nowrap;
+    will-change: transform;
+
+    .carousel-slide {
+      flex-shrink: 0;
+      flex-grow: 0;
+
+      padding: 1px;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+    }
+
+    .carousel-slide.prev,
+    .carousel-slide.next {
+      opacity: 0.7;
+    }
+  }
+
+    /* 导航按钮 */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    padding: 0;
+  }
+
+  .carousel-btn:hover:not(.carousel-btn-disabled) {
+    /* background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); */
+  }
+
+  .carousel-btn-disabled {
+    /* opacity: 0.3;
+    cursor: not-allowed; */
+  }
+
+  .carousel-btn-prev {
+    left: 16px;
+  }
+
+  .carousel-btn-next {
+    right: 16px;
+  }
+
+  /* 指示器 */
+  .carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10;
+    padding: 10px;
+    background-color: rgba(33, 33, 33, .75);
+    border-radius: 20px;
+    height: 24px;
+  }
+
+  .carousel-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .carousel-indicator.active {
+    background: white;
+    transform: scale(1.33);
+  }
+
+  .carousel-indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+  }
+
+  /* 移动端优化 */
+  @media (max-width: 768px) {
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+
+    .carousel-btn-prev {
+      left: 8px;
+    }
+
+    .carousel-btn-next {
+      right: 8px;
+    }
+  }
+
+  /* 减少动画 */
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-track {
+      transition: none;
+    }
+
+    .carousel-slide {
+      transition: none;
+    }
+  }
+}

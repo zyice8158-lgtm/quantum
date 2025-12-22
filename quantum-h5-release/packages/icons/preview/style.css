@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.icon-card .icon-component{
+  transition-duration: 500ms;
+}
+.icon-card:hover .icon-component{
+  transform: scale(1.6);
+}

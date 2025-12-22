@@ -1,0 +1,21 @@
+{
+  "name": "quantum-pods-0",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint --fix",
+    "prepare": "pnpx husky install"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

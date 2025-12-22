@@ -1,0 +1,196 @@
+{
+    "request_id": "case_The Next Chapter of Commercial Space",
+    "metadata": {
+        "usage": {
+            "total_token": 5030,
+            "output_token": 1469,
+            "prompt_token": 3561,
+            "doc_input_token": 2059
+        }
+    },
+    "title": "The Next Chapter of Commercial Space",
+    "content": [
+        {
+            "id": "Q1",
+            "type": "choice",
+            "question": "Which technological development is highlighted as having lowered barriers to entry in the commercial space sector?",
+            "options": [
+                {
+                    "code": "A",
+                    "text": "Nuclear propulsion systems"
+                },
+                {
+                    "code": "B",
+                    "text": "Reusable rocket technology"
+                },
+                {
+                    "code": "C",
+                    "text": "Solar sail deployment"
+                },
+                {
+                    "code": "D",
+                    "text": "Space tourism capsules"
+                }
+            ],
+            "answer": "B",
+            "analysis": "Reusable rocket technology is emphasized in the document as a key breakthrough that has reduced launch costs and made access to space more attainable. Nuclear propulsion and solar sails are not discussed as recent breakthroughs in this context, while space tourism is not cited as a barrier-lowering innovation."
+        },
+        {
+            "id": "Q2",
+            "type": "choice",
+            "question": "What psychological phenomenon drives collective overconfidence among investors during periods of rapid space innovation?",
+            "options": [
+                {
+                    "code": "A",
+                    "text": "Loss aversion"
+                },
+                {
+                    "code": "B",
+                    "text": "Anchoring bias"
+                },
+                {
+                    "code": "C",
+                    "text": "Selective attention"
+                },
+                {
+                    "code": "D",
+                    "text": "Herd behavior"
+                }
+            ],
+            "answer": "D",
+            "analysis": "Herd behavior describes the tendency of investors to follow prominent figures into new trends, fueling excessive optimism. While anchoring bias and selective attention also play roles, herd behavior is explicitly linked to the rush of investment spurred by fear of missing out."
+        },
+        {
+            "id": "Q3",
+            "type": "choice",
+            "question": "According to the Hype Cycle, what stage comes after the 'trough of disillusionment'?",
+            "options": [
+                {
+                    "code": "A",
+                    "text": "Innovation trigger"
+                },
+                {
+                    "code": "B",
+                    "text": "Slope of enlightenment"
+                },
+                {
+                    "code": "C",
+                    "text": "Plateau of productivity"
+                },
+                {
+                    "code": "D",
+                    "text": "Peak of inflated expectations"
+                }
+            ],
+            "answer": "B",
+            "analysis": "The 'slope of enlightenment' follows the 'trough of disillusionment', marking a period of learning and refinement. The innovation trigger and peak of expectations precede the trough, while the plateau of productivity is the final stage."
+        },
+        {
+            "id": "Q4",
+            "type": "choice",
+            "question": "What is identified as a challenge for the small satellite launch market?",
+            "options": [
+                {
+                    "code": "A",
+                    "text": "Inability to achieve orbit"
+                },
+                {
+                    "code": "B",
+                    "text": "Oversaturated market and competition from larger rockets"
+                },
+                {
+                    "code": "C",
+                    "text": "Lack of government support"
+                },
+                {
+                    "code": "D",
+                    "text": "Poor satellite design"
+                }
+            ],
+            "answer": "B",
+            "analysis": "The document points out that the small satellite launch market faced oversaturation and was undermined by cheaper rideshare services on larger rockets. The other options are not discussed as key challenges in this context."
+        },
+        {
+            "id": "Q5",
+            "type": "choice",
+            "question": "Which approach is recommended for building a sustainable commercial space industry?",
+            "options": [
+                {
+                    "code": "A",
+                    "text": "Maximizing speculative investment"
+                },
+                {
+                    "code": "B",
+                    "text": "Focusing exclusively on extraterrestrial mining"
+                },
+                {
+                    "code": "C",
+                    "text": "Honest reporting and acceptance of failure"
+                },
+                {
+                    "code": "D",
+                    "text": "Ignoring government involvement"
+                }
+            ],
+            "answer": "C",
+            "analysis": "The text advocates for transparency, constructive criticism, and learning from failures as essential for a mature and sustainable space industry. Speculative investment and ignoring government roles are criticized, while exclusive focus on mining is depicted as speculative."
+        },
+        {
+            "id": "Q6",
+            "type": "choice",
+            "question": "Which space technology is currently described as being at the 'trough of disillusionment' in the Hype Cycle?",
+            "options": [
+                {
+                    "code": "A",
+                    "text": "Asteroid mining"
+                },
+                {
+                    "code": "B",
+                    "text": "Reusable rockets"
+                },
+                {
+                    "code": "C",
+                    "text": "Space debris removal"
+                },
+                {
+                    "code": "D",
+                    "text": "Satellite megaconstellations"
+                }
+            ],
+            "answer": "C",
+            "analysis": "Space debris removal sits in the 'trough of disillusionment', facing technical viability but weak commercial prospects. Asteroid mining is still speculative, reusable rockets are approaching productivity, and satellite constellations are not specifically placed at this stage."
+        },
+        {
+            "id": "Q7",
+            "type": "bool",
+            "question": "Many commercial space ventures rely primarily on consumer demand rather than government contracts.",
+            "options": null,
+            "answer": "false",
+            "analysis": "The document clarifies that much of the revenue in the space economy still flows from government contracts, creating dependency illusions about market demand."
+        },
+        {
+            "id": "Q8",
+            "type": "bool",
+            "question": "The gap between vision and economic viability is a recurring challenge for commercial space initiatives.",
+            "options": null,
+            "answer": "true",
+            "analysis": "A central theme is the tension between technological possibilities and economic sustainability, which shapes industry outcomes and investor behavior."
+        },
+        {
+            "id": "Q9",
+            "type": "saq",
+            "question": "Briefly explain the 'Chicken-and-Egg' problem faced by new space infrastructure projects.",
+            "options": null,
+            "answer": "New infrastructure is costly to build without existing demand, yet demand cannot develop without the infrastructure. Governments can resolve this by acting as anchor customers and purchasing early services.",
+            "analysis": "Key scoring points are: (1) mutual dependency between infrastructure and demand; (2) the role of governments as initial supporters; (3) understanding how this resolves market stagnation. Precision in describing the dilemma is essential for full credit."
+        },
+        {
+            "id": "Q10",
+            "type": "saq",
+            "question": "What does the document suggest about the role of 'patient capital' in commercial space enterprises?",
+            "options": null,
+            "answer": "Patient capital from institutional investors and strategic partners is crucial, as space ventures require long development cycles and cannot deliver quick returns like typical startups.",
+            "analysis": "A good answer identifies that typical venture capital expectations do not match deep-tech space timelines, and points out the need for long-term investment focus. Mentioning sources and duration strengthens the response."
+        }
+    ]
+}
