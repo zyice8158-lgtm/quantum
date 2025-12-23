@@ -11,11 +11,23 @@
         @update:visible="(val) => $emit('update:visible', val)"
     >
         <template #header>
-            <slot name="header">
-                <span v-if="header" class="qdialog-title">{{ header }}</span>
-            </slot>
+            <div
+                class="qdialog-header-main"
+                :class="{ 'qdialog-header-main-collapsed': isCollapsed }"
+            >
+                <slot name="header">
+                    <span v-if="header" class="qdialog-title">{{ header }}</span>
+                </slot>
+            </div>
             <div class="qdialog-header-actions">
-                <slot name="icons" />
+                <slot
+                    name="icons"
+                    :isCollapsed="isCollapsed"
+                    :isMaximized="isMaximized"
+                    :toggleCollapse="toggleCollapse"
+                    :toggleMaximize="toggleMaximize"
+                    :close="handleClose"
+                />
                 <button v-if="collapsible" class="qdialog-icon-btn" @click="toggleCollapse">
                     <IconMini v-if="!isCollapsed" />
                     <IconAdd v-else />

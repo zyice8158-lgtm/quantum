@@ -24,17 +24,12 @@
     <p class="mt-[20px] mb-[10px]">Custom Header with Avatar</p>
     <section class="demo-section">
       <QButton color="primary" label="Show Custom Header" @click="visible = true" />
-      <QDialog v-model:visible="visible" modal>
+      <QDialog v-model:visible="visible" modal collapsible @collapse="collapsed = true" @expand="collapsed = false" @hide="handleCustomHeaderHide">
         <template #header>
           <div class="qdialog-custom-header">
             <img src="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" alt="Amy Elsner" class="avatar" />
             <span class="header-title">Amy Elsner</span>
           </div>
-        </template>
-        <template #icons>
-          <button class="qdialog-icon-btn" @click="collapsed = !collapsed">
-            <IconAdd v-if="collapsed" /><IconMini v-else />
-          </button>
         </template>
         <template v-if="!collapsed">
           <p class="dialog-description">Update your information.</p>
@@ -72,10 +67,43 @@
         </p>
       </QDialog>
     </section>
-    <div class="card mt-5 mb-5"><showCode :code="maximizableCode" /></div>
+  <div class="card mt-5 mb-5"><showCode :code="maximizableCode" /></div>
 
-    <!-- Size Variants -->
-    <p class="mt-[20px] mb-[10px]">Size Variants</p>
+    <!-- Slot Icons -->
+    <p class="mt-[20px] mb-[10px]">Slot Icons</p>
+    <section class="demo-section">
+      <QButton color="primary" label="Show Slot Icons" @click="visibleSlot = true" />
+      <QDialog
+        v-model:visible="visibleSlot"
+        modal
+        header="Header"
+        :closable="false"
+        :maximizable="false"
+        :collapsible="false"
+        size="large"
+      >
+        <template #icons="{ isCollapsed, isMaximized, toggleCollapse, toggleMaximize, close }">
+          <button class="qdialog-icon-btn" @click="toggleCollapse()">
+            <IconMini v-if="!isCollapsed" />
+            <IconAdd v-else />
+          </button>
+          <button class="qdialog-icon-btn" @click="toggleMaximize()">
+            <Icon2FullView v-if="isMaximized" />
+            <IconFull v-else />
+          </button>
+          <button class="qdialog-close-button" @click="close()">
+            <IconClose class="qdialog-close-icon" />
+          </button>
+        </template>
+        <p class="dialog-content-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </QDialog>
+    </section>
+    <div class="card mt-5 mb-5"><showCode :code="slotIconsCode" /></div>
+
+  <!-- Size Variants -->
+  <p class="mt-[20px] mb-[10px]">Size Variants</p>
     <section class="demo-section gap-4">
       <QButton color="primary" label="Small" @click="visibleSmall = true" />
       <QButton color="primary" label="Medium" @click="visibleMedium = true" />
@@ -111,13 +139,15 @@ import { ref, reactive } from 'vue';
 import { QButton } from '@libs/p-comps/volt/QButton';
 import QDialog from '@libs/p-comps/volt/Qdialog/index.vue';
 import showCode from '../components/showCode.vue';
-import { IconMini, IconAdd } from '@quantum/icons';
+import { IconClose, IconFull, Icon2FullView, IconAdd, IconMini } from '@quantum/icons';
 
 const [visibleBasic, visible, visibleMax, visibleSmall, visibleMedium, visibleLarge, visibleDismissable] =
   [ref(false), ref(false), ref(false), ref(false), ref(false), ref(false), ref(false)];
+const visibleSlot = ref(false);
 const collapsed = ref(false);
 const formData = reactive({ username: '', email: '' });
 const handleSave = () => { console.log('Saved:', formData); visible.value = false; };
+const handleCustomHeaderHide = () => { collapsed.value = false; };
 
 const importCode = `import QDialog from '@libs/p-comps/volt/Qdialog/index.vue';`;
 
@@ -129,17 +159,12 @@ const basicCode = `<QDialog v-model:visible="visible" modal header="Basic Dialog
   </template>
 </QDialog>`;
 
-const customHeaderCode = `<QDialog v-model:visible="visible" modal>
+const customHeaderCode = `<QDialog v-model:visible="visible" modal collapsible @collapse="collapsed = true" @expand="collapsed = false">
   <template #header>
     <div class="qdialog-custom-header">
       <img src="avatar.png" class="avatar" />
       <span class="header-title">Amy Elsner</span>
     </div>
-  </template>
-  <template #icons>
-    <button @click="collapsed = !collapsed">
-      <IconAdd v-if="collapsed" /><IconMini v-else />
-    </button>
   </template>
   <p>Form content...</p>
   <template #footer>
@@ -149,6 +174,23 @@ const customHeaderCode = `<QDialog v-model:visible="visible" modal>
 </QDialog>`;
 
 const maximizableCode = `<QDialog v-model:visible="visible" modal header="Header" maximizable collapsible size="large">
+  <p>Dialog content...</p>
+</QDialog>`;
+
+const slotIconsCode = `<QDialog v-model:visible="visible" modal header="Header" :closable="false" :maximizable="false" :collapsible="false" size="large">
+  <template #icons="{ isCollapsed, isMaximized, toggleCollapse, toggleMaximize, close }">
+    <button class="qdialog-icon-btn" @click="toggleCollapse()">
+      <IconMini v-if="!isCollapsed" />
+      <IconAdd v-else />
+    </button>
+    <button class="qdialog-icon-btn" @click="toggleMaximize()">
+      <Icon2FullView v-if="isMaximized" />
+      <IconFull v-else />
+    </button>
+    <button class="qdialog-close-button" @click="close()">
+      <IconClose class="qdialog-close-icon" />
+    </button>
+  </template>
   <p>Dialog content...</p>
 </QDialog>`;
 
