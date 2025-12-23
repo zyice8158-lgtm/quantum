@@ -16,7 +16,7 @@
           <Button v-tooltip.top="{
             value: 'Tooltip on top',
             pt: {
-              root: { class: 'custom-arrow-tooltip' },
+              root: { class: 'custom-arrow-tooltip show-arrow' },
               arrow: { class: 'arrow-center' }
             }
           }">

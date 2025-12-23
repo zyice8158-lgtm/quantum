@@ -1,5 +1,3 @@
-
-
 @theme static {
   --text-display-xl: calc(52px * var(--scale));
   --text-display-l: calc(48px * var(--scale));

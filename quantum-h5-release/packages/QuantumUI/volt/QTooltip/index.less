@@ -45,6 +45,7 @@
     height: 0;
     border: @arrow-size solid transparent;
     display: none; // 默认隐藏箭头
+    filter: drop-shadow(0 1px 2px @tooltip-shadow-heavy);
   }
 
   // 显示箭头的类名
@@ -60,6 +61,7 @@
       margin-left: -@arrow-size;
       border-top-color: @tooltip-bg;
       border-bottom: none;
+      filter: drop-shadow(0 2px 2px @tooltip-shadow-light);
     }
   }
 
@@ -71,6 +73,7 @@
       margin-left: -@arrow-size;
       border-bottom-color: @tooltip-bg;
       border-top: none;
+      filter: drop-shadow(0 -2px 2px @tooltip-shadow-light);
     }
   }
 
@@ -82,6 +85,7 @@
       margin-top: -@arrow-size;
       border-left-color: @tooltip-bg;
       border-right: none;
+      filter: drop-shadow(2px 0 2px @tooltip-shadow-light);
     }
   }
 
@@ -93,6 +97,7 @@
       margin-top: -@arrow-size;
       border-right-color: @tooltip-bg;
       border-left: none;
+      filter: drop-shadow(-2px 0 2px @tooltip-shadow-light);
     }
   }
 }
@@ -136,6 +141,7 @@
     height: 0;
     border-color: transparent;
     border-style: solid;
+    filter: drop-shadow(0 1px 2px @tooltip-shadow-heavy);
   }
 
   // 显示箭头的类名
@@ -151,6 +157,7 @@
     margin-left: -@arrow-size;
     border-width: @arrow-size;
     border-right-color: @tooltip-bg;
+    filter: drop-shadow(-2px 0 2px @tooltip-shadow-light);
   }
 
   // Left 位置箭头
@@ -161,6 +168,7 @@
     margin-right: -@arrow-size;
     border-width: @arrow-size;
     border-left-color: @tooltip-bg;
+    filter: drop-shadow(2px 0 2px @tooltip-shadow-light);
   }
 
   // Top 位置箭头
@@ -171,6 +179,7 @@
     margin-bottom: -@arrow-size;
     border-width: @arrow-size;
     border-top-color: @tooltip-bg;
+    filter: drop-shadow(0 2px 2px @tooltip-shadow-light);
   }
 
   // Bottom 位置箭头
@@ -181,6 +190,7 @@
     margin-top: -@arrow-size - 2px;
     border-width: @arrow-size;
     border-bottom-color: @tooltip-bg;
+    filter: drop-shadow(0 -2px 2px @tooltip-shadow-light);
   }
 
   // 文本样式
