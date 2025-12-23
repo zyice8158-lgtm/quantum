@@ -86,6 +86,16 @@
     </section>
     <div class="card mt-5 mb-5"><showCode :code="sizeCode" /></div>
 
+    <!-- Passthrough Native Props -->
+    <p class="mt-[20px] mb-[10px]">Passthrough Native Props (dismissableMask)</p>
+    <section class="demo-section">
+      <QButton color="primary" label="Show Dismissable" @click="visibleDismissable = true" />
+      <QDialog v-model:visible="visibleDismissable" modal dismissableMask header="Dismissable Mask">
+        <p class="dialog-content-text">This dialog can be closed by clicking the mask area (native PrimeVue prop).</p>
+      </QDialog>
+    </section>
+    <div class="card mt-5 mb-5"><showCode :code="dismissableCode" /></div>
+
     <!-- Props / Slots / Events -->
     <p class="mt-[20px] mb-[10px]">Props</p>
     <div class="card"><showCode :code="propsCode" lang="typescript" /></div>
@@ -103,8 +113,8 @@ import QDialog from '@libs/p-comps/volt/Qdialog/index.vue';
 import showCode from '../components/showCode.vue';
 import { IconMini, IconAdd } from '@quantum/icons';
 
-const [visibleBasic, visible, visibleMax, visibleSmall, visibleMedium, visibleLarge] =
-  [ref(false), ref(false), ref(false), ref(false), ref(false), ref(false)];
+const [visibleBasic, visible, visibleMax, visibleSmall, visibleMedium, visibleLarge, visibleDismissable] =
+  [ref(false), ref(false), ref(false), ref(false), ref(false), ref(false), ref(false)];
 const collapsed = ref(false);
 const formData = reactive({ username: '', email: '' });
 const handleSave = () => { console.log('Saved:', formData); visible.value = false; };
@@ -146,14 +156,18 @@ const sizeCode = `<QDialog size="small">...</QDialog>  <!-- 320px -->
 <QDialog size="medium">...</QDialog> <!-- 400px -->
 <QDialog size="large">...</QDialog>  <!-- 720px -->`;
 
-const propsCode = `interface Props {
+const dismissableCode = `<QDialog v-model:visible="visible" modal dismissableMask header="Dismissable Mask">
+  <p>Can close by clicking mask</p>
+</QDialog>`;
+
+const propsCode = `interface Props extends DialogProps {
   size?: 'small' | 'medium' | 'large';
   variant?: 'default' | 'simple';
   closable?: boolean;
   header?: string;
   maximizable?: boolean;
   collapsible?: boolean;
-  modal?: boolean;
+  // + All PrimeVue Dialog props (modal, dismissableMask, etc.)
 }`;
 
 const slotsCode = `#header   - Custom header content

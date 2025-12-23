@@ -1,12 +1,14 @@
 <template>
     <Dialog
         unstyled
+        v-bind="dialogProps"
         :pt="theme"
         :ptOptions="{ mergeProps: ptViewMerge }"
         :header="header"
         :closable="false"
         @hide="handleHide"
         @show="handleShow"
+        @update:visible="(val) => $emit('update:visible', val)"
     >
         <template #header>
             <slot name="header">
@@ -77,6 +79,12 @@ const emit = defineEmits<{
 
 const isMaximized = ref(false);
 const isCollapsed = ref(false);
+
+// 过滤掉自定义 props，将剩余的 props 透传给 PrimeVue Dialog
+const dialogProps = computed(() => {
+    const { size, variant, maximizable, collapsible, closable, header, ...rest } = props;
+    return rest;
+});
 
 const handleHide = () => {
     emit('hide');
