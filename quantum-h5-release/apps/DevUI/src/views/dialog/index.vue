@@ -4,7 +4,9 @@
 
     <!-- Basic Import -->
     <p class="mt-[20px] mb-[10px]">Basic Import</p>
-    <div class="card"><showCode :code="importCode" /></div>
+    <div class="card">
+      <showCode :code="importCode" />
+    </div>
 
     <!-- Basic Dialog -->
     <p class="mt-[20px] mb-[10px]">Basic Dialog</p>
@@ -18,16 +20,20 @@
         </template>
       </QDialog>
     </section>
-    <div class="card mt-5 mb-5"><showCode :code="basicCode" /></div>
+    <div class="card mt-5 mb-5">
+      <showCode :code="basicCode" />
+    </div>
 
     <!-- Custom Header Dialog -->
     <p class="mt-[20px] mb-[10px]">Custom Header with Avatar</p>
     <section class="demo-section">
       <QButton color="primary" label="Show Custom Header" @click="visible = true" />
-      <QDialog v-model:visible="visible" modal collapsible @collapse="collapsed = true" @expand="collapsed = false" @hide="handleCustomHeaderHide">
+      <QDialog v-model:visible="visible" modal collapsible @collapse="collapsed = true" @expand="collapsed = false"
+        @hide="handleCustomHeaderHide">
         <template #header>
           <div class="qdialog-custom-header">
-            <img src="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" alt="Amy Elsner" class="avatar" />
+            <img src="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" alt="Amy Elsner"
+              class="avatar" />
             <span class="header-title">Amy Elsner</span>
           </div>
         </template>
@@ -50,7 +56,9 @@
         </template>
       </QDialog>
     </section>
-    <div class="card mt-5 mb-5"><showCode :code="customHeaderCode" /></div>
+    <div class="card mt-5 mb-5">
+      <showCode :code="customHeaderCode" />
+    </div>
 
 
 
@@ -58,15 +66,8 @@
     <p class="mt-[20px] mb-[10px]">Slot Icons</p>
     <section class="demo-section">
       <QButton color="primary" label="Show Slot Icons" @click="visibleSlot = true" />
-      <QDialog
-        v-model:visible="visibleSlot"
-        modal
-        header="Header"
-        :closable="false"
-        :maximizable="false"
-        :collapsible="false"
-        size="large"
-      >
+      <QDialog v-model:visible="visibleSlot" modal header="Header" :closable="false" :maximizable="false"
+        :collapsible="false" size="large">
         <template #icons="{ isCollapsed, isMaximized, toggleCollapse, toggleMaximize, close }">
           <button class="qdialog-icon-btn" @click="toggleCollapse()">
             <IconMini v-if="!isCollapsed" />
@@ -81,14 +82,29 @@
           </button>
         </template>
         <p class="dialog-content-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
         </p>
       </QDialog>
     </section>
-    <div class="card mt-5 mb-5"><showCode :code="slotIconsCode" /></div>
+    <div class="card mt-5 mb-5">
+      <showCode :code="slotIconsCode" />
+    </div>
 
-  <!-- Size Variants -->
-  <p class="mt-[20px] mb-[10px]">Size Variants</p>
+    <!-- Size Variants -->
+    <p class="mt-[20px] mb-[10px]">Size Variants</p>
     <section class="demo-section gap-4">
       <QButton color="primary" label="Small" @click="visibleSmall = true" />
       <QButton color="primary" label="Medium" @click="visibleMedium = true" />
@@ -103,7 +119,9 @@
         <p class="dialog-content-text">Large (720px)</p>
       </QDialog>
     </section>
-    <div class="card mt-5 mb-5"><showCode :code="sizeCode" /></div>
+    <div class="card mt-5 mb-5">
+      <showCode :code="sizeCode" />
+    </div>
 
     <!-- Passthrough Native Props -->
     <p class="mt-[20px] mb-[10px]">Passthrough Native Props (dismissableMask)</p>
@@ -113,15 +131,23 @@
         <p class="dialog-content-text">This dialog can be closed by clicking the mask area (native PrimeVue prop).</p>
       </QDialog>
     </section>
-    <div class="card mt-5 mb-5"><showCode :code="dismissableCode" /></div>
+    <div class="card mt-5 mb-5">
+      <showCode :code="dismissableCode" />
+    </div>
 
     <!-- Props / Slots / Events -->
     <p class="mt-[20px] mb-[10px]">Props</p>
-    <div class="card"><showCode :code="propsCode" lang="typescript" /></div>
+    <div class="card">
+      <showCode :code="propsCode" lang="typescript" />
+    </div>
     <p class="mt-[20px] mb-[10px]">Slots</p>
-    <div class="card"><showCode :code="slotsCode" /></div>
+    <div class="card">
+      <showCode :code="slotsCode" />
+    </div>
     <p class="mt-[20px] mb-[10px]">Events</p>
-    <div class="card"><showCode :code="eventsCode" lang="typescript" /></div>
+    <div class="card">
+      <showCode :code="eventsCode" lang="typescript" />
+    </div>
   </div>
 </template>
 
@@ -210,7 +236,10 @@ const eventsCode = `hide, show, maximize, unmaximize, collapse, expand, 'update:
 </script>
 
 <style scoped>
-.card { width: 80%; }
+.card {
+  width: 80%;
+}
+
 .demo-section {
   display: flex;
   justify-content: center;
