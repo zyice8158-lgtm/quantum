@@ -11,22 +11,35 @@
         @update:visible="(val) => $emit('update:visible', val)"
     >
         <template #header>
-            <slot name="header">
-                <span v-if="header" class="qdialog-title">{{ header }}</span>
-            </slot>
+            <div
+                class="qdialog-header-main"
+                :class="{ 'qdialog-header-main-collapsed': isCollapsed }"
+            >
+                <slot name="header">
+                    <span v-if="header" class="qdialog-title">{{ header }}</span>
+                </slot>
+            </div>
             <div class="qdialog-header-actions">
-                <slot name="icons" />
-                <button v-if="collapsible" class="qdialog-icon-btn" @click="toggleCollapse">
-                    <IconMini v-if="!isCollapsed" />
-                    <IconAdd v-else />
-                </button>
-                <button v-if="maximizable" class="qdialog-icon-btn" @click="toggleMaximize">
-                    <Icon2FullView v-if="isMaximized" />
-                    <IconFull v-else />
-                </button>
-                <button v-if="closable" class="qdialog-close-button" @click="handleClose">
-                    <IconClose class="qdialog-close-icon" />
-                </button>
+                <slot
+                    name="icons"
+                    :isCollapsed="isCollapsed"
+                    :isMaximized="isMaximized"
+                    :toggleCollapse="toggleCollapse"
+                    :toggleMaximize="toggleMaximize"
+                    :close="handleClose"
+                >
+                    <button v-if="collapsible" class="qdialog-icon-btn" @click="toggleCollapse">
+                        <IconMini v-if="!isCollapsed" />
+                        <IconAdd v-else />
+                    </button>
+                    <button v-if="maximizable" class="qdialog-icon-btn" @click="toggleMaximize">
+                        <Icon2FullView v-if="isMaximized" />
+                        <IconFull v-else />
+                    </button>
+                    <button v-if="closable" class="qdialog-close-button" @click="handleClose">
+                        <IconClose class="qdialog-close-icon" />
+                    </button>
+                </slot>
             </div>
         </template>
         <template #default>

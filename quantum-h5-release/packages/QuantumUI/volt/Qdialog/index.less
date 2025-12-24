@@ -1,122 +1,17 @@
-// ========== Base Styles ==========
-.qdialog {
-  &.qdialog-root {
-    max-height: 90%;
-    max-width: 100vw;
-    border-radius: var(--radius-12);
-    background-color: var(--color-surface);
-    color: var(--color-text-on-surface);
-    box-shadow: 0 25px 50px -12px var(--effects-elevation-drop-shadow-heavy);
-    transition: all 0.3s ease;
-  }
-
-  // ========== Size Variants ==========
-  &.qdialog-small {
-    width: 320px;
-  }
-
-  &.qdialog-medium {
-    width: 400px;
-  }
-
-  &.qdialog-large {
-    width: 720px;
-  }
-
-  // ========== Style Variants ==========
-  &.qdialog-default {
-    border: 1px solid var(--color-outlines-outline-variant);
-  }
-
-  &.qdialog-simple {
-    border: none;
-  }
-
-  // ========== Maximized State ==========
-  &.qdialog-maximized {
-    width: 100vw !important;
-    height: 100vh !important;
-    max-height: 100vh !important;
-    max-width: 100vw !important;
-    border-radius: var(--radius-0) !important;
-    top: 0 !important;
-    left: 0 !important;
-  }
-}
-
-// ========== Header ==========
-.qdialog-header {
+// ========== Mixins ==========
+.flex-center() {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
-  padding: var(--radius-20);
-  gap: var(--radius-12);
 }
 
-.qdialog-title {
-  font-size: var(--text-title-m);
-  line-height: var(--leading-title-m);
-  font-weight: 600;
-  color: var(--color-text-on-surface);
-  flex: 1;
-}
-
-.qdialog-header-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--radius-4);
-  margin-left: auto;
-  flex-shrink: 0;
-}
-
-// ========== Content Wrapper (Collapse Animation) ==========
-.qdialog-content-wrapper {
-  max-height: 1000px;
+.text-ellipsis() {
+  white-space: nowrap;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  opacity: 1;
+  text-overflow: ellipsis;
 }
 
-.qdialog-content-collapsed {
-  max-height: 0;
-  opacity: 0;
-}
-
-// ========== Content ==========
-.qdialog-content {
-  overflow-y: auto;
-  padding: 0 var(--radius-20) var(--radius-20);
-  color: var(--color-text-on-surface-variant);
-  font-size: var(--text-body-m);
-  line-height: var(--leading-body-m);
-}
-
-// ========== Footer ==========
-.qdialog-footer {
-  flex-shrink: 0;
-  padding: 0 var(--radius-20) var(--radius-20);
-  display: flex;
-  justify-content: flex-end;
-  gap: var(--radius-8);
-}
-
-// ========== Mask ==========
-.qdialog-mask {
-  &[data-p-dialog-mask-modal='true'] {
-    background-color: var(--color-overlay-scrim);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-// ========== Icon Buttons (Close, Maximize, Collapse) ==========
-.qdialog-close-button,
-.qdialog-icon-btn {
-  display: flex;
-  align-items: center;
+.icon-btn-base() {
+  .flex-center();
   justify-content: center;
   width: var(--radius-32);
   height: var(--radius-32);
@@ -138,15 +33,140 @@
   }
 }
 
+// ========== Base Styles ==========
+.qdialog {
+  &.qdialog-root {
+    max-height: 90%;
+    max-width: 100vw;
+    border-radius: var(--radius-12);
+    background-color: var(--color-surface);
+    color: var(--color-text-on-surface);
+    box-shadow: 0 25px 50px -12px var(--effects-elevation-drop-shadow-heavy);
+    transition: all 0.3s ease;
+  }
+
+  &.qdialog-small { width: 320px; }
+  &.qdialog-medium { width: 400px; }
+  &.qdialog-large { width: 720px; }
+
+  &.qdialog-default { border: 1px solid var(--color-outlines-outline-variant); }
+  &.qdialog-simple { border: none; }
+
+  &.qdialog-maximized {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    max-width: 100vw !important;
+    border-radius: var(--radius-0) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
+
+// ========== Header ==========
+.qdialog-header {
+  .flex-center();
+  flex-shrink: 0;
+  padding: var(--radius-20);
+  gap: var(--radius-12);
+}
+
+.qdialog-header-main {
+  .flex-center();
+  flex: 1;
+  min-width: 0;
+
+  &.qdialog-header-main-collapsed {
+    overflow: hidden;
+    .text-ellipsis();
+
+    .qdialog-title,
+    .header-title { .text-ellipsis(); }
+
+    .qdialog-custom-header {
+      flex-wrap: nowrap;
+      overflow: hidden;
+      .avatar { width: 32px; height: 32px; }
+    }
+  }
+}
+
+.qdialog-title {
+  font-size: var(--text-title-m);
+  line-height: var(--leading-title-m);
+  font-weight: 600;
+  color: var(--color-text-on-surface);
+  flex: 1;
+}
+
+.qdialog-header-actions {
+  .flex-center();
+  gap: var(--radius-4);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+// ========== Content ==========
+.qdialog-content-wrapper {
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  opacity: 1;
+
+  &.qdialog-content-collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 !important;
+  }
+}
+
+.qdialog-content {
+  overflow-y: auto;
+  padding: 0 var(--radius-20) var(--radius-20);
+  color: var(--color-text-on-surface-variant);
+  font-size: var(--text-body-m);
+  line-height: var(--leading-body-m);
+
+  &:has(.qdialog-content-collapsed) { padding: 0; }
+}
+
+// ========== Footer ==========
+.qdialog-footer {
+  flex-shrink: 0;
+  padding: 0 var(--radius-20) var(--radius-20);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--radius-8);
+
+  &:empty { padding: 0; display: none; }
+}
+
+// ========== Mask ==========
+.qdialog-mask[data-p-dialog-mask-modal='true'] {
+  background-color: var(--color-overlay-scrim);
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// ========== Icon Buttons ==========
+.qdialog-close-button,
+.qdialog-icon-btn { .icon-btn-base(); }
+
 .qdialog-close-icon {
   width: var(--radius-20);
   height: var(--radius-20);
 }
 
-// ========== Custom Header (with avatar) ==========
+.qdialog-header-icons {
+  .flex-center();
+  gap: var(--radius-4);
+}
+
+// ========== Custom Header ==========
 .qdialog-custom-header {
-  display: flex;
-  align-items: center;
+  .flex-center();
   gap: var(--radius-12);
   flex: 1;
   min-width: 0;
@@ -164,6 +184,7 @@
     line-height: var(--leading-title-m);
     font-weight: 600;
     color: var(--color-text-on-surface);
+    .text-ellipsis();
   }
 }
 
@@ -174,8 +195,7 @@
   gap: var(--radius-16);
 
   .form-row {
-    display: flex;
-    align-items: center;
+    .flex-center();
     gap: var(--radius-16);
 
     .form-label {
@@ -198,13 +218,8 @@
       color: var(--color-text-on-surface);
       transition: border-color 0.2s ease;
 
-      &:focus {
-        border-color: var(--color-primary);
-      }
-
-      &::placeholder {
-        color: var(--color-text-on-surface-muted);
-      }
+      &:focus { border-color: var(--color-primary); }
+      &::placeholder { color: var(--color-text-on-surface-muted); }
     }
   }
 }
@@ -223,20 +238,14 @@
     background: transparent;
     border: none;
     color: var(--color-text-on-surface-variant);
-
-    &:hover {
-      background: var(--color-surface-hover);
-    }
+    &:hover { background: var(--color-surface-hover); }
   }
 
   &-save {
     background: var(--color-surface-container);
     border: 1px solid var(--color-outlines-outline-variant);
     color: var(--color-text-on-surface);
-
-    &:hover {
-      background: var(--color-surface-container-highest);
-    }
+    &:hover { background: var(--color-surface-container-highest); }
   }
 }
 
@@ -248,9 +257,8 @@
   gap: var(--radius-20);
 
   .card {
-    display: flex;
+    .flex-center();
     justify-content: center;
-    align-items: center;
     min-height: 200px;
     background: var(--color-surface);
     border-radius: var(--radius-8);
@@ -258,22 +266,18 @@
   }
 }
 
-.dialog-description {
-  color: var(--color-text-on-surface-variant);
-  font-size: var(--text-body-m);
-  line-height: var(--leading-body-m);
-  margin-bottom: var(--radius-20);
-}
-
+.dialog-description,
 .dialog-content-text {
-  color: var(--color-text-on-surface);
   font-size: var(--text-body-m);
   line-height: var(--leading-body-m);
   margin: 0;
 }
 
-.qdialog-header-icons {
-  display: flex;
-  align-items: center;
-  gap: var(--radius-4);
+.dialog-description {
+  color: var(--color-text-on-surface-variant);
+  margin-bottom: var(--radius-20);
+}
+
+.dialog-content-text {
+  color: var(--color-text-on-surface);
 }
