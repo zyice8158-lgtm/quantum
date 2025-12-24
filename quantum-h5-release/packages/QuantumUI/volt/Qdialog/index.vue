@@ -29,15 +29,21 @@
                     :close="handleClose"
                 >
                     <button v-if="collapsible" class="qdialog-icon-btn" @click="toggleCollapse">
-                        <IconMini v-if="!isCollapsed" />
-                        <IconAdd v-else />
+                        <slot name="collapse-icon" :isCollapsed="isCollapsed">
+                            <IconMini v-if="!isCollapsed" />
+                            <IconAdd v-else />
+                        </slot>
                     </button>
                     <button v-if="maximizable" class="qdialog-icon-btn" @click="toggleMaximize">
-                        <Icon2FullView v-if="isMaximized" />
-                        <IconFull v-else />
+                        <slot name="maximize-icon" :isMaximized="isMaximized">
+                            <Icon2FullView v-if="isMaximized" />
+                            <IconFull v-else />
+                        </slot>
                     </button>
                     <button v-if="closable" class="qdialog-close-button" @click="handleClose">
-                        <IconClose class="qdialog-close-icon" />
+                        <slot name="close-icon">
+                            <IconClose class="qdialog-close-icon" />
+                        </slot>
                     </button>
                 </slot>
             </div>

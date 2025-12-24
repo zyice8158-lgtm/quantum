@@ -11,11 +11,6 @@
     <section class="demo-section">
       <QButton color="primary" label="Show Basic" @click="visibleBasic = true" />
       <QDialog v-model:visible="visibleBasic" modal header="Basic Dialog" size="medium">
-        <template #icons="{ close }">
-          <button class="qdialog-close-button" @click="close()">
-            <IconClose class="qdialog-close-icon" />
-          </button>
-        </template>
         <p class="dialog-content-text">This is a basic dialog with default settings.</p>
         <template #footer>
           <button class="qdialog-btn qdialog-btn-cancel" @click="visibleBasic = false">Cancel</button>
@@ -35,15 +30,6 @@
             <img src="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" alt="Amy Elsner" class="avatar" />
             <span class="header-title">Amy Elsner</span>
           </div>
-        </template>
-        <template #icons="{ isCollapsed, toggleCollapse, close }">
-          <button class="qdialog-icon-btn" @click="toggleCollapse()">
-            <IconMini v-if="!isCollapsed" />
-            <IconAdd v-else />
-          </button>
-          <button class="qdialog-close-button" @click="close()">
-            <IconClose class="qdialog-close-icon" />
-          </button>
         </template>
         <template v-if="!collapsed">
           <p class="dialog-description">Update your information.</p>
@@ -108,27 +94,12 @@
       <QButton color="primary" label="Medium" @click="visibleMedium = true" />
       <QButton color="primary" label="Large" @click="visibleLarge = true" />
       <QDialog v-model:visible="visibleSmall" modal header="Small Dialog" size="small">
-        <template #icons="{ close }">
-          <button class="qdialog-close-button" @click="close()">
-            <IconClose class="qdialog-close-icon" />
-          </button>
-        </template>
         <p class="dialog-content-text">Small (320px)</p>
       </QDialog>
       <QDialog v-model:visible="visibleMedium" modal header="Medium Dialog" size="medium">
-        <template #icons="{ close }">
-          <button class="qdialog-close-button" @click="close()">
-            <IconClose class="qdialog-close-icon" />
-          </button>
-        </template>
         <p class="dialog-content-text">Medium (400px)</p>
       </QDialog>
       <QDialog v-model:visible="visibleLarge" modal header="Large Dialog" size="large">
-        <template #icons="{ close }">
-          <button class="qdialog-close-button" @click="close()">
-            <IconClose class="qdialog-close-icon" />
-          </button>
-        </template>
         <p class="dialog-content-text">Large (720px)</p>
       </QDialog>
     </section>
@@ -139,11 +110,6 @@
     <section class="demo-section">
       <QButton color="primary" label="Show Dismissable" @click="visibleDismissable = true" />
       <QDialog v-model:visible="visibleDismissable" modal dismissableMask header="Dismissable Mask">
-        <template #icons="{ close }">
-          <button class="qdialog-close-button" @click="close()">
-            <IconClose class="qdialog-close-icon" />
-          </button>
-        </template>
         <p class="dialog-content-text">This dialog can be closed by clicking the mask area (native PrimeVue prop).</p>
       </QDialog>
     </section>
