@@ -66,35 +66,7 @@
     </section>
     <div class="card mt-5 mb-5"><showCode :code="customHeaderCode" /></div>
 
-    <!-- Maximizable & Collapsible Dialog -->
-    <p class="mt-[20px] mb-[10px]">Maximizable & Collapsible</p>
-    <section class="demo-section">
-      <QButton color="primary" label="Show Maximizable" @click="visibleMax = true" />
-      <QDialog v-model:visible="visibleMax" modal header="Header" maximizable collapsible size="large">
-        <template #icons="{ isCollapsed, isMaximized, toggleCollapse, toggleMaximize, close }">
-          <button class="qdialog-icon-btn" @click="toggleCollapse()">
-            <IconMini v-if="!isCollapsed" />
-            <IconAdd v-else />
-          </button>
-          <button class="qdialog-icon-btn" @click="toggleMaximize()">
-            <Icon2FullView v-if="isMaximized" />
-            <IconFull v-else />
-          </button>
-          <button class="qdialog-close-button" @click="close()">
-            <IconClose class="qdialog-close-icon" />
-          </button>
-        </template>
-        <p class="dialog-content-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </QDialog>
-    </section>
-  <div class="card mt-5 mb-5"><showCode :code="maximizableCode" /></div>
+
 
     <!-- Slot Icons -->
     <p class="mt-[20px] mb-[10px]">Slot Icons</p>
@@ -194,7 +166,7 @@ import QDialog from '@libs/p-comps/volt/Qdialog/index.vue';
 import showCode from '../components/showCode.vue';
 import { IconClose, IconFull, Icon2FullView, IconAdd, IconMini } from '@quantum/icons';
 
-const [visibleBasic, visible, visibleMax, visibleSmall, visibleMedium, visibleLarge, visibleDismissable] =
+const [visibleBasic, visible, visibleSmall, visibleMedium, visibleLarge, visibleDismissable] =
   [ref(false), ref(false), ref(false), ref(false), ref(false), ref(false), ref(false)];
 const visibleSlot = ref(false);
 const collapsed = ref(false);
@@ -226,9 +198,7 @@ const customHeaderCode = `<QDialog v-model:visible="visible" modal collapsible @
   </template>
 </QDialog>`;
 
-const maximizableCode = `<QDialog v-model:visible="visible" modal header="Header" maximizable collapsible size="large">
-  <p>Dialog content...</p>
-</QDialog>`;
+
 
 const slotIconsCode = `<QDialog v-model:visible="visible" modal header="Header" :closable="false" :maximizable="false" :collapsible="false" size="large">
   <template #icons="{ isCollapsed, isMaximized, toggleCollapse, toggleMaximize, close }">
