@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="page-container">
     <h1 class="text-2xl font-bold mb-6">Dialog</h1>
