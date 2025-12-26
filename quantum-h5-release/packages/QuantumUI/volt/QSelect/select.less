@@ -1,0 +1,97 @@
+// QSelect styles - Light & Dark Theme
+
+.q-select-override {
+    // ==================== Light Theme (Default) ====================
+    // Input background: white
+    background-color: var(--color-surface) !important;
+    // Border: light purple
+    border: 1px solid var(--color-primary-container) !important;
+    // Text color: dark
+    color: var(--color-text-on-surface) !important;
+    border-radius: 0.75rem !important;
+    transition: all 0.2s ease-in-out;
+    min-width: 14rem !important;
+
+    // Label text color: purple
+    .p-select-label {
+        color: var(--color-primary-primary) !important;
+    }
+
+    // Input text color: dark
+    .p-select-label:not(.p-placeholder) {
+        color: var(--color-text-on-surface) !important;
+    }
+
+    // Placeholder color: purple
+    .p-select-label.p-placeholder {
+        color: var(--color-primary-primary) !important;
+    }
+
+    // Hover State - Border changes to primary color
+    &:hover {
+        border-color: var(--color-primary-primary) !important;
+    }
+
+    // Focus State
+    &.p-focus {
+        border-color: var(--color-primary-primary) !important;
+        box-shadow: 0 0 0 2px var(--color-primary-hover) !important;
+    }
+
+    // Dropdown arrow icon color: dark gray
+    :deep(.p-select-dropdown-icon),
+    :deep(.p-select-dropdown) {
+        color: var(--color-text-on-surface-variant) !important;
+    }
+}
+
+// ==================== Dropdown Overlay (Light Theme) ====================
+.p-select-overlay {
+    // Dropdown menu background: white
+    background-color: var(--color-surface) !important;
+    // Border: light gray
+    border: 1px solid var(--color-outlines-outline-variant) !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 4px 16px var(--effects-elevation-drop-shadow-light) !important;
+    margin-top: 4px !important;
+    overflow: hidden !important;
+
+    // Option list
+    .p-select-list {
+        padding: 0.25rem !important;
+    }
+
+    // Option styles
+    .p-select-option {
+        // Normal item: dark text
+        color: var(--color-text-on-surface) !important;
+        background-color: transparent !important;
+        border-radius: 0.5rem !important;
+        margin: 0.125rem 0 !important;
+        padding: 0.625rem 0.75rem !important;
+        transition: all 0.15s ease-in-out;
+        font-weight: 400 !important;
+
+        // Hover State - Light purple background
+        &:hover:not(.p-select-option-selected) {
+            background-color: var(--color-primary-container) !important;
+            color: var(--color-primary-primary) !important;
+        }
+
+        // Focus State (keyboard navigation)
+        &.p-focus:not(.p-select-option-selected) {
+            background-color: var(--color-primary-container) !important;
+            color: var(--color-primary-primary) !important;
+        }
+
+        // Selected State - Light purple background, dark purple bold text
+        &.p-select-option-selected,
+        &[data-p-selected="true"] {
+            background-color: var(--color-primary-container) !important;
+            color: var(--color-primary-primary) !important;
+            font-weight: 600 !important;
+        }
+    }
+}
+
+

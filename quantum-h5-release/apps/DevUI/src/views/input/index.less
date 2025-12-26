@@ -1,0 +1,89 @@
+.card {
+  width: 80%;
+}
+
+.input-section {
+  display: flex;
+  justify-content: center;
+  border: 1px dashed #D0BCFF;
+  border-radius: 2rem;
+  padding: 2rem;
+  max-width: 64rem;
+}
+
+/* Float Label Input */
+.float-label-input {
+  position: relative;
+  width: 320px;
+  min-height: 56px;
+  background-color: #F5F3F7;
+  border: 1.5px solid var(--color-primary-container, #E9DDFF);
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  cursor: text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &:hover {
+    border-color: var(--color-primary-primary, #6C43C6);
+  }
+
+  &.focused,
+  &:focus-within {
+    border-color: var(--color-primary-primary, #6C43C6);
+    box-shadow: 0 0 0 2px var(--color-primary-hover, rgba(133, 94, 225, 0.12));
+  }
+
+  &.has-value,
+  &.is-focused,
+  &:focus-within {
+    .float-label {
+      top: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--color-primary-primary, #6C43C6);
+    }
+
+    .input-field {
+      padding-top: 0.75rem;
+
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* Float Label */
+.float-label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-primary-primary, #6C43C6);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: transparent;
+  z-index: 1;
+}
+
+/* Input Field */
+.input-field {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--color-text-on-surface, #161C27);
+  padding: 0;
+  margin: 0;
+  z-index: 0;
+
+  &::placeholder {
+    color: var(--color-text-on-surface-variant, #5F5E60);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+}
